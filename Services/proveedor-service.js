@@ -1,4 +1,4 @@
-opcProveedor =
+const opcProveedor =
 {
     "GET":() => GetAll(),
     "GETBYID": (id) => GetById(id),

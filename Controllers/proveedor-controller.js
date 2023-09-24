@@ -1,4 +1,4 @@
-import { opcProveedor } from "../Services/proveedor-service";
+import { opcProveedor } from "../Services/proveedor-service.js";
 
 export class ProveedorController
  {

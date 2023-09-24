@@ -1,4 +1,4 @@
-import { ProveedorController } from "../../../Controllers/proveedor-controller";
+import { ProveedorController } from "../../../Controllers/proveedor-controller.js";
 class  ProveedorComponent extends HTMLElement
 {
     constructor()
