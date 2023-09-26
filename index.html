@@ -34,8 +34,8 @@
 			<li>
 				<a href="#"><i class='bx bxs-notepad icon' ></i> Forms <i class='bx bx-chevron-right icon-right' ></i></a>
 				<ul class="side-dropdown">
-					<li><a class="entidades" data-verocultar='[["#alerts","#navPais"],["#Dashboard","#navProveedor"]]' href="#">Pais</a></li>
-					<li><a class="entidades" data-verocultar='[["#alerts","#navProveedor"],["#Dashboard","#navPais"]]' href="#">Proveedor</a></li>
+					<li><a class="entidades" data-verocultar='[["#navMenu","#navPais"],["#Dashboard","#navProveedor","#divProveedor"]]' href="#">Pais</a></li>
+					<li><a class="entidades" data-verocultar='[["#navMenu","#divProveedor","#navProveedor"],["#Dashboard","#navPais","#divPais"]]' href="#">Proveedor</a></li>
 					<li><a class="entidades" href="#">Checkbox</a></li>
 					<li><a class="entidades" href="#">Radio</a></li>
 				</ul>
@@ -79,7 +79,7 @@
 			</div>
 
 			<!-- Paises -->
-			<div id="alerts" style="display:none"  >
+			<div id="navMenu" style="display:none"  >
 				
 				<navbar-menu></navbar-menu>
 

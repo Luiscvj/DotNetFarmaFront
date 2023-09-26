@@ -12,7 +12,7 @@ listarPaises = async () =>
 {
     let res = await opc['GET']();
     console.log(res)
-    if(res == null) return console.alert('Fallo en la consulta');
+    if(res == null) return console.log('Fallo en la consulta');
 
     let divListarPais = document.querySelector("#listarPais");
     let listPaisHtml = '';

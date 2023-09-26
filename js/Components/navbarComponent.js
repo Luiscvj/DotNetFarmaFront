@@ -44,7 +44,7 @@ class NavBarContent extends HTMLElement
 
 
 
-      <div id="navProveedor">
+      <div id="navProveedor" >
           <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
               
@@ -86,6 +86,7 @@ eventoMostrarNavBar = ()=>
         val.addEventListener("click",(e)=>
         {
             let datosVerOcultar = JSON.parse(e.target.dataset.verocultar);
+            console.log(datosVerOcultar[0]);
             console.log(datosVerOcultar[1]);
 
            datosVerOcultar[0].forEach(opcionVer =>
@@ -97,7 +98,7 @@ eventoMostrarNavBar = ()=>
 
             datosVerOcultar[1].forEach(opcion =>
                 {
-                   console.log(opcion);
+                   
                     let divOcultar = document.querySelector(opcion);
                     divOcultar.style.display = 'none';
                 })

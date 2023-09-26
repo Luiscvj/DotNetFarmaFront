@@ -1,26 +1,36 @@
+
+
+
 const opcProveedor =
 {
     "GET":() => GetAll(),
     "GETBYID": (id) => GetById(id),
-    "POST":(data) => Post(),
+    "POST":(data) => Post(data),
     "PUT":(id,data)=> Update(id,data),
     "DELETE": (id) => Delete(id)
 }
 
-
 const URL_API = 'http://localhost:5000/api/Proveedor';
-const config =
-{
-    headers: new Headers
-    ({
-        "Contente-Type" :"application/json"
-    }),
-};
+
+   const Header= 
+   {
+       headers: new Headers
+       ({
+           "Content-Type" :"application/json"
+       }),
+
+   }
 
 
 let GetAll = async()=>
-{
-    config.method ='GET';
+{   
+    const config =
+    {
+        method :"GET",
+        headers :Header.headers
+    };
+    
+    
 
     try
     {   
@@ -51,20 +61,29 @@ let GetAll = async()=>
 
 
 let Post = async (data) =>
-{
+{ 
+
     let datos = JSON.stringify(data);
-    config.method ="POST";
-    config.body = datos;
+    
+    const config =
+    {
+        method :"POST",
+        headers :Header.headers,
+        body :datos
+    };
+   
+    
+   
     try
     {
 
-        let res = await (await fetch(`${URL_API}`,config)).json();
+        let res =await fetch(`${URL_API}`,config);
     
         if(res.status == 201)
         {
             console.log("Registro Exitoso");
 
-            return res;
+            return await res.json();
         }
     }catch(error)
     {
@@ -74,7 +93,67 @@ let Post = async (data) =>
 }
 
 
+    let Delete = async(id) =>
+    {
+           
+    const config =
+    {
+        method :"DELETE",
+        headers :Header.headers,
+       
+    };
 
+        try
+        {
+            let response = await fetch(`${URL_API}/${id}`,config)
+
+            if(response.status == 200)
+            {
+                console.log("Registro eliminado con exito");
+                return response;
+            }
+
+        }catch(error)
+        {
+            console.error(error)
+        }
+
+    }
+
+ let Update = async (id,data) =>
+ {  
+    const config =
+    {
+        method :"PUT",
+        headers :Header.headers,
+       
+    };
+     try
+     { 
+        let datos = JSON.stringify(data);
+        config.body = datos;
+        let response = await fetch(`${URL_API}?id=${id}`,config)
+    
+        if(response.status == 200)  
+            {
+                console.log('Registro actualizado con exito');
+                return response;
+            }
+
+        else
+        {
+            return `Error en la consulta ${response.status}`;
+        }
+
+     }catch(error)
+     {
+        console.log(error);
+     }
+
+
+   
+    
+ }
 export 
 {
     opcProveedor
