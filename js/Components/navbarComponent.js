@@ -67,7 +67,6 @@ class NavBarContent extends HTMLElement
                   </div>
             </div>
         </nav>
-
       </div>
 
       <div id="navEps">
@@ -158,7 +157,6 @@ class NavBarContent extends HTMLElement
 
         
         `
-
     }
 
 

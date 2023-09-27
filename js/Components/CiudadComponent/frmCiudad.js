@@ -53,12 +53,12 @@ class CiudadComponent extends HTMLElement
 
     eventoMostrarCiudadFormularios = () =>
     {
-            console.log("Hice click en navDEp")
+            console.log("Hice click en navCiudad")
             document.querySelectorAll(".navCiudad").forEach((val,id) =>
             {
                 val.addEventListener("click",(e)=>
                 {
-                    console.log("Hice click en navDEp")
+                    console.log("Hice click en navCiudad")
                     let datosVerOcultar = JSON.parse(e.target.dataset.hideformciudad);
                    
                     datosVerOcultar[0].forEach(opcion => 

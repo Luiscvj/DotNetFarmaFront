@@ -1,5 +1,5 @@
 import { opcCiudad } from "../Services/ciudad-service.js";
-import { opc } from "../Services/departamento-service.js";
+export { opcDepartamento } from "../Services/departamento-service.js";
 export class CiudadController
 {
     constructor()
@@ -69,7 +69,7 @@ export class CiudadController
    
     CargaDepartamentoFrmCiudad = async() =>
     {  
-        let responseDepartamentos = await opc['GET']();
+        let responseDepartamentos = await opcDepartamento['GET']();
       //me trae todas las opciones sin necesidad de usar values y los paso a array
       let selectDepartamentosCiudad =  document.querySelector("#selectDepartamentos");
       if(selectDepartamentosCiudad.options[1] == undefined)
@@ -179,7 +179,7 @@ UpdateViewToPUTCiudades = () =>
             buttonSaveFormCiudad.dataset.action= "update";
             buttonSaveFormCiudad.value = registroId;
             buttonSaveFormCiudad.innerHTML = "Actualizar Registro";
-            this.CargaCiudadFrmCiudad();
+            this.CargaDepartamentoFrmCiudad();
           
 
            
