@@ -19,7 +19,7 @@ class  ProveedorComponent extends HTMLElement
         `
       
   <div class="card-header" id="frmRegProveedor" style="margin: 50px; display: none; border-radius:10px "  >  
-      <form id="formRegPais">
+      <form id="formRegProveedor">
             <div class="row">
                     <div class="col-sm-4" style ="padding: 4px" >
                         <input type="text" class="form-control" placeholder="Nombre" id="nombre" aria-label="First name"  required>
@@ -63,7 +63,7 @@ eventoOcultarRegListProveedor = ()=>
 
             datos[0].forEach(divProveedor =>
                 {
-                    console.log(divProveedor);
+                    
                     let divVer = document.querySelector(divProveedor);
                     if(divProveedor.includes("listProveedor"))this._proveedorController.GetAllProveedor();
                         
@@ -74,7 +74,7 @@ eventoOcultarRegListProveedor = ()=>
               
             datos[1].forEach(divProveedor =>
                 {
-                    console.log(divProveedor);
+                    
                     let divOcultar = document.querySelector(divProveedor);
                     divOcultar.style.display = 'none';
                 })
@@ -93,7 +93,7 @@ guardarDataOrUpdate = async () =>
     { 
         let datasetButtonFormRegister = buttonFormRegProveedor.dataset.action;
         console.log(datasetButtonFormRegister);
-        let frmSucursal = document.forms['formRegPais'];
+        let frmSucursal = document.forms['formRegProveedor'];
         let Nombre =frmSucursal['nombre'];
         let Telefono =  frmSucursal['telefono'];
         let Email = frmSucursal['email'];

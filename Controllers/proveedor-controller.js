@@ -51,7 +51,7 @@ export class ProveedorController
                     <h5 class="card-title">${proveedor.nombre}</h5>
                     <p class="card-text">${proveedor.email}</p>
                     <p class="card-text">${proveedor.direccion}</p>       
-                    <a href="#" class="btn btn-warning updateButtons" id="${proveedor.proveedorId}">editar</a>
+                    <a href="#" class="btn btn-warning updateProveedorButtons" id="${proveedor.proveedorId}">editar</a>
                     <a href="#" class="btn btn-danger deleteProveedor" id="${proveedor.proveedorId}">Eliminar</a>
                 </div>
             </div>
@@ -102,7 +102,7 @@ export class ProveedorController
 
     UpdateViewToPUTProveedores = () =>
     {let registroId;
-         document.querySelectorAll(".updateButtons").forEach((val,id)=>
+         document.querySelectorAll(".updateProveedorButtons").forEach((val,id)=>
          {
             val.addEventListener("click",(e)=>
             {

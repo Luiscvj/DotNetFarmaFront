@@ -8,6 +8,7 @@ class PaisComponent extends HTMLElement
         super();
         this.render();
         this.eventoMostrarPaisFormularios();
+        this.guardarDataOrUpdate();
         this._paisController = new PaisController();
     }
 
@@ -21,10 +22,15 @@ class PaisComponent extends HTMLElement
                         <div>										
                             <div class="row  align-items-center">
                                 <div class="col">
-                                <input type="text" class="form-control" placeholder="Nombre Pais" aria-label="First name">
+                                <input type="text" class="form-control" placeholder="Nombre Pais" id="nombre" aria-label="First name" required>
                                 </div>
-                            </div>					
+                            </div>	
+
                         </div>
+
+                    <div class="col-12" style ="padding: 10px">
+                        <button type="button" id="guardarDataPais" data-action="save" class="btn btn-primary">Guardar Informacion</button>
+                   </div>
         </form>			
     </div>
 
@@ -52,7 +58,7 @@ class PaisComponent extends HTMLElement
                             divVer.style.display = 'block';
                             if(opcion.includes("listarPais"))
                              {   
-                                this._paisController.listarPaises();
+                                this._paisController.GetPaises();
                              }
 
 
@@ -62,5 +68,44 @@ class PaisComponent extends HTMLElement
                 })
             })
     }
+
+
+    guardarDataOrUpdate = async () => 
+    {
+        let buttonFormRegPais = document.querySelector("#guardarDataPais");
+        buttonFormRegPais.addEventListener("click", (e) =>
+        { 
+            let datasetButtonFormRegister = buttonFormRegPais.dataset.action;
+            console.log(datasetButtonFormRegister);
+            let frmSucursal = document.forms['frmRegistroPais'];
+            let Nombre =frmSucursal['nombre'];
+           
+            let   Pais = 
+            {
+               paisId : 0,
+               nombre : Nombre.value,
+              
+            };
+           if(datasetButtonFormRegister =="save")
+           {
+              
+                this._paisController.PostPaises(Pais);
+           }
+           else if(datasetButtonFormRegister =="update")
+           {   
+                let idDelRegistro = parseInt(buttonFormRegPais.value);
+                Pais.paisId= idDelRegistro;
+                this._paisController.PutPais(idDelRegistro,Pais); 
+                buttonFormRegPais.dataset.action="save";
+               
+           }
+           buttonFormRegPais.innerHTML ="Guardar Informacion";
+           Nombre.value = "";
+       
+    
+        })
+    
+    }
+
 }
 customElements.define("frm-reglist-pais",PaisComponent)

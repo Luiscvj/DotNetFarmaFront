@@ -34,8 +34,9 @@
 			<li>
 				<a href="#"><i class='bx bxs-notepad icon' ></i> Forms <i class='bx bx-chevron-right icon-right' ></i></a>
 				<ul class="side-dropdown">
-					<li><a class="entidades" data-verocultar='[["#navMenu","#navPais"],["#Dashboard","#navProveedor","#divProveedor"]]' href="#">Pais</a></li>
-					<li><a class="entidades" data-verocultar='[["#navMenu","#divProveedor","#navProveedor"],["#Dashboard","#navPais","#divPais"]]' href="#">Proveedor</a></li>
+					<li><a class="entidades" data-verocultar='[["#navMenu","#navPais"],["#Dashboard","#navProveedor","#divProveedor", "#navDepartamento","#divDepartamento","#frmRegDepartamento","#frmRegProveedor"]]' href="#">Pais</a></li>
+					<li><a class="entidades" data-verocultar='[["#navMenu","#divProveedor","#navProveedor"],["#Dashboard","#navPais","#divPais", "#navDepartamento","#divDepartamento","#frmRegDepartamento"]]' href="#">Proveedor</a></li>
+					<li><a class="entidades" data-verocultar='[["#navMenu","#navDepartamento","#divDepartamento"],["#Dashboard","#navPais","#divProveedor","#divPais","#navProveedor","#frmRegProveedor"]]' href="#">Departamento</a></li>
 					<li><a class="entidades" href="#">Checkbox</a></li>
 					<li><a class="entidades" href="#">Radio</a></li>
 				</ul>
@@ -92,6 +93,10 @@
 
 		   <div id="divProveedor" style="display: none">
 				<frm-reglist-proveedor></frm-reglist-proveedor>
+		   </div>
+
+		   <div id="divDepartamento" style="display:none;" >
+				<frm-reglist-departamento></frm-reglist-departamento>
 		   </div>
 
 
