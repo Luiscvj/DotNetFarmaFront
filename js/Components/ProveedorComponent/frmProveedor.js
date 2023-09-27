@@ -1,4 +1,7 @@
 import { ProveedorController } from "../../../Controllers/proveedor-controller.js";
+
+
+
 class  ProveedorComponent extends HTMLElement
 {
     constructor()
@@ -6,6 +9,7 @@ class  ProveedorComponent extends HTMLElement
         super();
         this.render();
         this.eventoOcultarRegListProveedor();
+        this.guardarDataOrUpdate();
         this._proveedorController = new ProveedorController();
     }
 
@@ -14,50 +18,33 @@ class  ProveedorComponent extends HTMLElement
         this.innerHTML =  /* html */
         `
       
-  <div class="card-header" id="frmRegProveedor" style="margin: 50px; display: block; border-radius:10px "  >  
-      <form id="formRegPais">
+  <div class="card-header" id="frmRegProveedor" style="margin: 50px; display: none; border-radius:10px "  >  
+      <form id="formRegProveedor">
             <div class="row">
                     <div class="col-sm-4" style ="padding: 4px" >
-                        <input type="text" class="form-control" placeholder="Nombre" aria-label="First name"  required>
+                        <input type="text" class="form-control" placeholder="Nombre" id="nombre" aria-label="First name"  required>
                     </div>
                     <div class="col-sm-4" style ="padding: 4px">
-                        <input type="text" class="form-control" placeholder="Telefono" aria-label="Last name" required>
+                        <input type="text" class="form-control" placeholder="Telefono" id="telefono" aria-label="Last name" required>
                     </div>
                     <div class="col-sm-4" style ="padding: 4px">
-                        <input type="email" class="form-control" placeholder=" Email" aria-label="First name" required>
+                        <input type="email" class="form-control" placeholder=" Email" id="email" aria-label="First name" required>
                     </div>
                     <div class="col-sm-5" style ="padding: 4px">
-                        <input type="text" class="form-control" placeholder="Direccion" aria-label="Last name" required>
+                        <input type="text" class="form-control" placeholder="Direccion" id="direccion" aria-label="Last name" required>
                     </div>
             </div>
 
             <div class="col-12" style ="padding: 10px">
-                 <button type="submit" class="btn btn-primary">Guardar Informacion</button>
+                 <button type="button" id="guardarDataProveedor" data-action="save" class="btn btn-primary">Guardar Informacion</button>
             </div>
       </form>  
   </div>
 
 
 
-    <div class="row" id ="listProveedor">
-        <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-        </div>
-    <div class="col-sm-6">
-            <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-        </div>
+   <div class="row" id ="listProveedor" style="display: none">
+        
     </div>
     
   
@@ -70,20 +57,24 @@ eventoOcultarRegListProveedor = ()=>
 {
     document.querySelectorAll(".navProveedor").forEach((val,id) =>
     {
-        val.addEventListener("click", (e)=>
+        val.addEventListener("click", async (e)=>
         {
             let datos = JSON.parse(e.target.dataset.hideformproveedor);
 
             datos[0].forEach(divProveedor =>
                 {
-                    console.log(divProveedor);
+                    
                     let divVer = document.querySelector(divProveedor);
+                    if(divProveedor.includes("listProveedor"))this._proveedorController.GetAllProveedor();
+                        
+                                            
                     divVer.style.display = 'block';
-
+                    
                 });
+              
             datos[1].forEach(divProveedor =>
                 {
-                    console.log(divProveedor);
+                    
                     let divOcultar = document.querySelector(divProveedor);
                     divOcultar.style.display = 'none';
                 })
@@ -95,16 +86,47 @@ eventoOcultarRegListProveedor = ()=>
 
 
 
-guardarData = () => 
+guardarDataOrUpdate = async () => 
 {
-    let formRegProveedor = document.querySelector("#formRegPais");
-    formRegProveedor.addEventListener("submit", (e) =>
-    {
-        e.preventDefault();
+    let buttonFormRegProveedor = document.querySelector("#guardarDataProveedor");
+    buttonFormRegProveedor.addEventListener("click", (e) =>
+    { 
+        let datasetButtonFormRegister = buttonFormRegProveedor.dataset.action;
+        console.log(datasetButtonFormRegister);
+        let frmSucursal = document.forms['formRegProveedor'];
+        let Nombre =frmSucursal['nombre'];
+        let Telefono =  frmSucursal['telefono'];
+        let Email = frmSucursal['email'];
+        let Direccion = frmSucursal['direccion'];
+        let   Proveedor = 
+        {
+           proveedorId : 0,
+           nombre : Nombre.value,
+           telefono :Telefono.value,
+           email : Email.value,
+           direccion : Direccion.value
+        };
+       if(datasetButtonFormRegister =="save")
+       {
+            console.log("tengo proveedor", Proveedor);
+            this._proveedorController.PostProveedor(Proveedor);
+       }
+       else if(datasetButtonFormRegister =="update")
+       {   
+            let idDelRegistro = parseInt(buttonFormRegProveedor.value);
+            Proveedor.proveedorId= idDelRegistro;
+            this._proveedorController.PutProveedor(idDelRegistro,Proveedor); 
+            buttonFormRegProveedor.dataset.action="save";
+           
+       }
+       buttonFormRegProveedor.innerHTML ="Guardar Informacion";
+       Nombre.value = "";
+       Telefono.value = "";
+       Email.value = "";
+       Direccion.value = "";
 
-        let data = Object.fromEntries( new FormData(e.target));//Aca pas todas las entradas de mi formulario
-        this._proveedorController.PostProveedor(data);
     })
+
 }
 
 }

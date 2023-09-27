@@ -1,14 +1,12 @@
-const opc =
+const opcDepartamento =
 {
-    "GET" : () => getAllPais(),
-    "GETBYID":() => GetByIdPais(),
-    "POST": (data) => PostPais(data),
-    "PUT" : (id,data)=> Update(id,data),
-    "DELETE" :(id) => DeleteData(id)
+    "GET": () => GetDepartamentos(),
+    "POST": (data)=> PostDepartamentos(data),
+    "PUT" : (id,data) => UpdateDepartamento(id,data),
+    "DELETE":(id) => DeleteDepartamento(id)
 }
 
-
-const URL_API ='http://localhost:5000/api/Pais';
+const URL_API ='http://localhost:5000/api/Departamento';
 const Header =
 {
     headers : new Headers
@@ -18,7 +16,8 @@ const Header =
 }
 
 
-let getAllPais = async () => 
+
+let GetDepartamentos = async () => 
 {   
     const config =
     {
@@ -53,7 +52,7 @@ let getAllPais = async () =>
 }
 
 
-let PostPais = async (data) =>
+let PostDepartamentos = async (data) =>
 {
     let datos = JSON.stringify(data);
     
@@ -81,7 +80,7 @@ let PostPais = async (data) =>
     }
 }
 
-let DeleteData = async(id) =>
+let DeleteDepartamento = async(id) =>
 {
     const  config = 
     {
@@ -100,7 +99,7 @@ let DeleteData = async(id) =>
 
 }
 
-let Update = async (id,data) => 
+let UpdateDepartamento = async (id,data) => 
 {
     let datosPais = JSON.stringify(data);
     
@@ -129,6 +128,5 @@ let Update = async (id,data) =>
 
 export 
 {
-    opc
+    opcDepartamento
 }
-
