@@ -38,7 +38,7 @@
 					<li><a class="entidades" data-verocultar='[["#navMenu","#divProveedor","#navProveedor"],["#Dashboard","#navPais","#divPais", "#navDepartamento","#divDepartamento","#frmRegDepartamento","#navCiudad","divCiudad","#navEps","divEps"]]' href="#">Proveedor</a></li>
 					<li><a class="entidades" data-verocultar='[["#navMenu","#navDepartamento","#divDepartamento"],["#Dashboard","#navPais","#divProveedor","#divPais","#navProveedor","#frmRegProveedor","navCiudad","divCiudad","navEps","divEps"]]' href="#">Departamento</a></li>
 					<li><a class="entidades" data-verocultar='[["#navMenu","#navCiudad","#divCiudad"],["#Dashboard","#navPais","#divProveedor","#divPais","#navProveedor","#frmRegProveedor","navDepartamento","divDepartamento","navEps","divEps"]]' href="#">Ciudad</a></li>
-					<li><a class="entidades" data-verocultar='[["#navMenu","#navEps","divEps"],["#Dashboard","#navProveedor","#navCiudad","#navPais"]]' href="#">Eps</a></li>
+					<li><a class="entidades" data-verocultar='[["#navMenu","#navEps","divEps"],["#Dashboard","#navPais","#divProveedor","#divPais","#navProveedor","#frmRegProveedor","navDepartamento","divDepartamento","navCiudad","divCiudad"]]' href="#">Eps</a></li>
 					<li><a class="entidades" href="#">Checkbox</a></li>
 					<li><a class="entidades" href="#">Radio</a></li>
 				</ul>
@@ -96,6 +96,14 @@
 		   <div id="divProveedor" style="display: none">
 				<frm-reglist-proveedor></frm-reglist-proveedor>
 		   </div>
+
+		   <div id="divCiudad" style="display: none">
+			<frm-reglist-ciudad></frm-reglist-ciudad>
+	   		</div>
+
+	   		<div id="divEps" style="display: none">
+			<frm-reglist-eps></frm-reglist-eps>
+   			</div>
 
 
 
