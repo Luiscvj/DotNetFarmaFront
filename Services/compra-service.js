@@ -1,14 +1,12 @@
-const opcMedicamento =
+const opcCompra =
 {
-    "GET" : () => GetMedicamento(),
-    "GETBYID":(id) => GetByIdMedicamento(id),
-    "POST": (data) => PostMedicamento(data),
-    "PUT" : (id,data)=> UpdateMedicamento(id,data),
-    "DELETE" :(id) => DeleteMedicamento(id)
+    "GET": () => GetCompra(),
+    "POST": (data)=> PostCompra(data),
+    "PUT" : (id,data) => UpdateCompra(id,data),
+    "DELETE":(id) => DeleteCompra(id)
 }
 
-
-const URL_API ='http://localhost:5000/api/Medicamento';
+const URL_API ='http://localhost:5000/api/Compra';
 const Header =
 {
     headers : new Headers
@@ -18,7 +16,8 @@ const Header =
 }
 
 
-let GetMedicamento = async () => 
+
+let GetCompra = async () => 
 {   
     const config =
     {
@@ -52,32 +51,11 @@ let GetMedicamento = async () =>
     }
 }
 
-let  GetByIdMedicamento = async(id)=>
-{    
-    const config =
-    {
-        method : "GET",
-        headers : Header.headers
-    }
-  
-    try
-    {
-        let response = await fetch(`${URL_API}/${id}`,config);
-        if(response.status == 200)
-        {
-            return await response.json();
-        }
-    }catch(error)
-    {
-        console.error(error);
-    }
-}
 
-
-let PostMedicamento = async (data) =>
+let PostCompra = async (data) =>
 {
     let datos = JSON.stringify(data);
-    console.log(data);
+    
 
     try
     {
@@ -87,7 +65,7 @@ let PostMedicamento = async (data) =>
             headers : Header.headers,
             body : datos        
         }
-     
+
         let response = await fetch(`${URL_API}`,config);
 
         if (response.status == 201)
@@ -102,7 +80,7 @@ let PostMedicamento = async (data) =>
     }
 }
 
-let DeleteMedicamento = async(id) =>
+let DeleteCompra = async(id) =>
 {
     const  config = 
     {
@@ -121,8 +99,8 @@ let DeleteMedicamento = async(id) =>
 
 }
 
-let UpdateMedicamento = async (id,data) => 
-{    console.log(id,data);
+let UpdateCompra = async (id,data) => 
+{
     let datosPais = JSON.stringify(data);
     
     const config =
@@ -150,6 +128,5 @@ let UpdateMedicamento = async (id,data) =>
 
 export 
 {
-    opcMedicamento
+    opcCompra
 }
-

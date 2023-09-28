@@ -1,14 +1,14 @@
-const opcMedicamento =
+const opcMedicamentoCompra =
 {
-    "GET" : () => GetMedicamento(),
-    "GETBYID":(id) => GetByIdMedicamento(id),
-    "POST": (data) => PostMedicamento(data),
-    "PUT" : (id,data)=> UpdateMedicamento(id,data),
-    "DELETE" :(id) => DeleteMedicamento(id)
+    "GET" : () => GetMedicamentoCompra(),
+    "GETBYID":(id) => GetByIdMedicamentoCompra(id),
+    "POST": (data) => PostMedicamentoCompra(data),
+    "PUT" : (id,data)=> UpdateMedicamentoCompra(id,data),
+    "DELETE" :(id) => DeleteMedicamentoCompra(id)
 }
 
 
-const URL_API ='http://localhost:5000/api/Medicamento';
+const URL_API ='http://localhost:5000/api/MedicamentoCompra';
 const Header =
 {
     headers : new Headers
@@ -18,7 +18,7 @@ const Header =
 }
 
 
-let GetMedicamento = async () => 
+let GetMedicamentoCompra = async () => 
 {   
     const config =
     {
@@ -52,7 +52,7 @@ let GetMedicamento = async () =>
     }
 }
 
-let  GetByIdMedicamento = async(id)=>
+let  GetByIdMedicamentoCompra = async(id)=>
 {    
     const config =
     {
@@ -74,10 +74,10 @@ let  GetByIdMedicamento = async(id)=>
 }
 
 
-let PostMedicamento = async (data) =>
+let PostMedicamentoCompra = async (data) =>
 {
     let datos = JSON.stringify(data);
-    console.log(data);
+    
 
     try
     {
@@ -87,7 +87,7 @@ let PostMedicamento = async (data) =>
             headers : Header.headers,
             body : datos        
         }
-     
+
         let response = await fetch(`${URL_API}`,config);
 
         if (response.status == 201)
@@ -102,7 +102,7 @@ let PostMedicamento = async (data) =>
     }
 }
 
-let DeleteMedicamento = async(id) =>
+let DeleteMedicamentoCompra = async(id) =>
 {
     const  config = 
     {
@@ -121,7 +121,7 @@ let DeleteMedicamento = async(id) =>
 
 }
 
-let UpdateMedicamento = async (id,data) => 
+let UpdateMedicamentoCompra = async (id,data) => 
 {    console.log(id,data);
     let datosPais = JSON.stringify(data);
     
@@ -150,6 +150,6 @@ let UpdateMedicamento = async (id,data) =>
 
 export 
 {
-    opcMedicamento
+    opcMedicamentoCompra
 }
 
