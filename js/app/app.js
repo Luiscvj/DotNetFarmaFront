@@ -4,6 +4,7 @@ import '../Components/ProveedorComponent/frmProveedor.js'
 import '../Components/DepartamentoComponent/frmDepartamento.js'
 import '../Components/EmpleadoComponent/frmEmpleado.js'
 import '../Components/MedicamentoComponent/frmMedicamento.js'
+import "../Components/ArlComponent/Arl.js";
 
 /* import { PaisController } from '../../Controllers/pais-controller.js';
 let _paisController = new PaisController();
