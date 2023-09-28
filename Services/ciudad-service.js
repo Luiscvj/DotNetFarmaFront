@@ -1,12 +1,12 @@
-const opcDepartamento =
+const opcCiudad =
 {
-    "GET": () => GetDepartamentos(),
-    "POST": (data)=> PostDepartamento(data),
-    "PUT" : (id,data) => UpdateDepartamento(id,data),
-    "DELETE":(id) => DeleteDepartamento(id)
+    "GET": () => GetCiudades(),
+    "POST": (data)=> PostCiudades(data),
+    "PUT" : (id,data) => UpdateCiudad(id,data),
+    "DELETE":(id) => DeleteCiudad(id)
 }
 
-const URL_API ='http://localhost:5000/api/Departamento';
+const URL_API ='http://localhost:5000/api/Ciudad';
 const Header =
 {
     headers : new Headers
@@ -17,7 +17,7 @@ const Header =
 
 
 
-let GetDepartamentos = async () => 
+let GetCiudades = async () => 
 {   
     const config =
     {
@@ -52,7 +52,7 @@ let GetDepartamentos = async () =>
 }
 
 
-let PostDepartamento = async (data) =>
+let PostCiudades = async (data) =>
 {
     let datos = JSON.stringify(data);
     
@@ -80,7 +80,7 @@ let PostDepartamento = async (data) =>
     }
 }
 
-let DeleteDepartamento = async(id) =>
+let DeleteCiudad = async(id) =>
 {
     const  config = 
     {
@@ -99,15 +99,15 @@ let DeleteDepartamento = async(id) =>
 
 }
 
-let UpdateDepartamento = async (id,data) => 
+let UpdateCiudad = async (id,data) => 
 {
-    let datosDepartamento = JSON.stringify(data);
+    let datosPais = JSON.stringify(data);
     
     const config =
     {
         method  : "PUT",
         headers : Header.headers,
-        body    : datosDepartamento
+        body    : datosPais
     }
 
 
@@ -128,5 +128,5 @@ let UpdateDepartamento = async (id,data) =>
 
 export 
 {
-    opcDepartamento
+    opcCiudad
 }

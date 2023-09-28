@@ -12,19 +12,19 @@
 	<script src="/js/bootstrap/bootstrap.min.js" defer></script>
 	
 	<script src="/js/app/app.js" defer type="module"></script>
-	<title>AdminSite</title>
+	<title>DotNetFarma</title>
 </head>
 <body>
 	<!-- SIDEBAR -->
 	<section id="sidebar">
-		<a href="#" class="brand"><i class='bx bxs-smile icon'></i> AdminSite</a>
+		<a href="#" class="brand"><i class='bx bxs-smile icon'></i> DotNetFarma</a>
 		<ul class="side-menu">
 			<li><a href="#" class="active"><i class='bx bxs-dashboard icon' ></i> Dashboard</a></li>
 			<li class="divider" data-text="main">Main</li>
 			<li>
 				<a href="#"><i class='bx bxs-inbox icon' ></i> Elements <i class='bx bx-chevron-right icon-right' ></i></a>
 				<ul class="side-dropdown">
-					<li><a href="#" class="entidades" data-verocultar='[["#navMenu","#navMedicamento","#divMedicamento"],["#Dashboard","#navPais","#divPais", "#navDepartamento","#divDepartamento","#frmRegDepartamento","#divProveedor","#navProveedor","#divEmpleado","#navEmpleado"]]'>Medicamento</a></li>
+					<li><a href="#" class="entidades" data-verocultar='[["#navMenu","#navMedicamento","#divMedicamento"],["#Dashboard","#navPais","#divPais","#navDepartamento","#divDepartamento","#frmRegDepartamento","#divProveedor","#navProveedor","#divEmpleado","#navEmpleado","#frmRegEps","#navEps","#divEps","#navCiudad","#divCiudad","#frmRegCiudad"]]'>Medicamento</a></li>
 					<li><a href="#">Badges</a></li>
 					<li><a href="#">Breadcrumbs</a></li>
 					<li><a href="#">Button</a></li>
@@ -32,15 +32,17 @@
 			</li>
 			<li><a href="#"><i class='bx bxs-chart icon' ></i> Charts</a></li>
 			<li><a href="#"><i class='bx bxs-widget icon' ></i> Widgets</a></li>
-			<li class="divider" data-text="table and forms">Table and forms</li>
+			<li class="divider" data-text="table and fors">Table and fors</li>
 			<li><a href="#"><i class='bx bx-table icon' ></i> Tables</a></li>
 			<li>
 				<a href="#"><i class='bx bxs-notepad icon' ></i> Forms <i class='bx bx-chevron-right icon-right' ></i></a>
 				<ul class="side-dropdown">
-					<li><a class="entidades" data-verocultar='[["#navMenu","#divProveedor","#navProveedor"],["#Dashboard","#navPais","#divPais", "#navDepartamento","#divDepartamento","#frmRegDepartamento","#divEmpleado","#navEmpleado","#frmRegEmpleado","#navMedicamento","#divMedicamento"]]' href="#">Proveedor</a></li>
-					<li><a class="entidades" data-verocultar='[["#navMenu","#divEmpleado","#navEmpleado"],["#Dashboard","#navPais","#divPais", "#navDepartamento","#divDepartamento","#frmRegDepartamento","#divProveedor","#navProveedor","#navMedicamento","#divMedicamento"]]' href="#">Empleado</a></li>
-					<li><a class="entidades" data-verocultar='[["#navMenu","#navDepartamento","#divDepartamento"],["#Dashboard","#navPais","#divProveedor","#divPais","#navProveedor","#frmRegProveedor","#divEmpleado","#navEmpleado","#frmRegEmpleado","#navMedicamento","#divMedicamento"]]' href="#">Departamento</a></li>
-					<li><a class="entidades" data-verocultar='[["#navMenu","#navPais"],["#Dashboard","#navProveedor","#divProveedor", "#navDepartamento","#divDepartamento","#frmRegDepartamento","#frmRegProveedor","#divEmpleado","#navEmpleado","#frmRegEmpleado","#navMedicamento","#divMedicamento"]]' href="#">Pais</a></li>
+					<li><a class="entidades" data-verocultar='[["#navMenu","#navPais"],["#Dashboard","#navProveedor","#divProveedor","#navDepartamento","#divDepartamento","#frmRegDepartamento","#frmRegProveedor","#frmRegCiudad","#frmRegEps","#navCiudad","#divCiudad","#navEps","#divEps","#divEmpleado","#navEmpleado","#navMedicamento","#divMedicamento"]]' href="#">Pais</a></li>
+					<li><a class="entidades" data-verocultar='[["#navMenu","#divProveedor","#navProveedor"],["#Dashboard","#navPais","#divPais","#navDepartamento","#divDepartamento","#frmRegDepartamento","#navCiudad","#frmRegCiudad","#frmRegEps","#divCiudad","#navEps","#divEps","#frmRegPais","#divEmpleado","#navEmpleado","#navMedicamento","#divMedicamento"]]' href="#">Proveedor</a></li>
+					<li><a class="entidades" data-verocultar='[["#navMenu","#divEmpleado","#navEmpleado"],["#Dashboard","#navPais","#divPais", "#navDepartamento","#divDepartamento","#frmRegDepartamento","#divProveedor","#navProveedor","#navMedicamento","#divMedicamento","#frmRegEps","#navEps","#divEps","#navCiudad","#divCiudad","#frmRegCiudad"]]' href="#">Empleado</a></li>
+					<li><a class="entidades" data-verocultar='[["#navMenu","#navDepartamento","#divDepartamento"],["#Dashboard","#navPais","#divProveedor","#divPais","#navProveedor","#frmRegProveedor","#navCiudad","#divCiudad","#navEps","#divEps","#frmRegCiudad","#frmRegEps","#frmRegPais","#divEmpleado","#navEmpleado","#navMedicamento","#divMedicamento"]]' href="#">Departamento</a></li>
+					<li><a class="entidades" data-verocultar='[["#navMenu","#navCiudad","#divCiudad"],["#Dashboard","#navPais","#divProveedor","#divPais","#navProveedor","#frmRegProveedor","#navDepartamento","#divDepartamento","#navEps","#divEps","#frmRegDepartamento","#frmRegEps","#frmRegPais","#divEmpleado","#navEmpleado","#navMedicamento","#divMedicamento"]]' href="#">Ciudad</a></li>
+					<li><a class="entidades" data-verocultar='[["#navMenu","#navEps","#divEps"],["#Dashboard","#navPais","#divProveedor","#divPais","#navProveedor","#frmRegProveedor","#navDepartamento","#divDepartamento","#navCiudad","#divCiudad","#frmRegDepartamento","#frmRegCiudad","#frmRegPais","#divEmpleado","#navEmpleado","#navMedicamento","#divMedicamento"]]' href="#">Eps</a></li>
 					<li><a class="entidades" href="#">Checkbox</a></li>
 					<li><a class="entidades" href="#">Radio</a></li>
 				</ul>
@@ -54,13 +56,13 @@
 		<!-- NAVBAR -->
 		<nav>
 			<i class='bx bx-menu toggle-sidebar' ></i>
-			<form action="#">
+			<for action="#">
 				
-			</form>
+			</for>
 			
 			<span class="divider"></span>
 			<div class="profile">
-				<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+				<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=forat&fit=crop&w=500&q=60" alt="">
 				<ul class="profile-link">
 					<li><a href="#"><i class='bx bxs-user-circle icon' ></i> Profile</a></li>
 					<li><a href="#"><i class='bx bxs-cog' ></i> Settings</a></li>
@@ -103,15 +105,23 @@
 				<frm-reglist-departamento></frm-reglist-departamento>
 		   </div>
 
-		   <div id="divEmpleado" style="display: none">
-			
-				<frm-reglist-empleado></frm-reglist-empleado>
-		   </div>
+		   <div id="divEmpleado" style="display:none;" >
+			<frm-reglist-empleado></frm-reglist-empleado>
+	   		</div>
 
-		   <div id="divMedicamento" class="p-2">
+			<div id="divMedicamento" class="p-2">
 
 				<frm-reglist-medicamento></frm-reglist-medicamento>	   
-		  </div>
+		  	</div>
+
+		   <div id="divCiudad" style="display: none">
+			<frm-reglist-ciudad></frm-reglist-ciudad>
+			</div>
+
+			<div id="divEps" style="display:none;" >
+					<frm-reglist-eps></frm-reglist-eps>
+			</div>
+		   
 		
 		
 		<!-- <div class="dropdown" >
