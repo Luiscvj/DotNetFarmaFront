@@ -17,7 +17,7 @@ class DepartamentoComponent extends HTMLElement
         this.innerHTML = /* html */
         `
     <div class="card-header" id="frmRegDepartamento" style="margin: 50px; display: none; border-radius:10px "  >                
-        <form class="row g-3 needs-validation"  id="frmRegistroDepartamento" >					
+        <form class="row g-3 needs-validation"  id="frmRegistroDepartamento"  style="display:none">					
                         <div>										
                             <div class="row  align-items-center">
                                 <div class="col">
@@ -27,7 +27,7 @@ class DepartamentoComponent extends HTMLElement
                                     </select>	
                                 </div>
                                 <div class="col">
-                                     <input type="text" class="form-control" placeholder="Nombre Departamento" id="nombre" aria-label="First name" required>
+                                     <input type="text" class="form-control" placeholder="Nombre Departamento" id="nombreDepartamento" aria-label="First name" required>
                                 </div>         
                             </div>
 
@@ -37,12 +37,13 @@ class DepartamentoComponent extends HTMLElement
                         <button type="button" id="guardarDataDepartamento" data-action="save" class="btn btn-primary">Guardar Informacion</button>
                    </div>
         </form>			
-    </div>
+   
 
 
 
     <div class="row" id="listarDepartamento" style="margin: 50px; display: none;  "  >                
          
+    </div>
     </div>
 
         
@@ -64,17 +65,21 @@ class DepartamentoComponent extends HTMLElement
                     datosVerOcultar[0].forEach(opcion => 
                         {
                             let divVer = document.querySelector(opcion);
-                            divVer.style.display = 'block';
                             if(opcion.includes("listarDepartamento"))
-                             {   
+                            {   console.log("HOLAAA en listaraaaaa")
                                 this._departamentoController.GetDepartamentos();
-
-                             }
-
+                                divVer.style.display = 'flex';
+                                
+                            }
+                            
                              else if(opcion.includes("#frmRegDepartamento"))
                              {
+                                divVer.style.display = 'block';
                                 console.log("Cargando paises");
                                 this._departamentoController.CargaPaisFrmDepartamento();
+                             }else
+                             {
+                                divVer.style.display = 'block';
                              }
 
 
@@ -93,7 +98,7 @@ class DepartamentoComponent extends HTMLElement
         { 
             let datasetButtonFormRegister = buttonFormRegDepartamento.dataset.action;
             let frmSucursal = document.forms['frmRegistroDepartamento'];
-            let Nombre =frmSucursal['nombre'];
+            let Nombre =frmSucursal['nombreDepartamento'];
     
             let   Departamento = 
             {

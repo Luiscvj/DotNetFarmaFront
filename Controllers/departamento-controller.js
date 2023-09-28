@@ -30,7 +30,7 @@ export class DepartamentoController
     {
         let cardDepartamento = /* html */  
         `
-        <div class="col-sm-6">
+        <div class="col-sm-6 p-2">
             <div class="card" style="width: 18rem;">
                     <div class="card-body">
                         <h5 class="card-title">${departamento.nombre}</h5>
@@ -72,27 +72,67 @@ export class DepartamentoController
         let responsePaises = await opc['GET']();
       //me trae todas las opciones sin necesidad de usar values y los paso a array
       let selectPaisesDepartamento =  document.querySelector("#selectPaises");
+      console.log(selectPaisesDepartamento.options[0]);
+    
       if(selectPaisesDepartamento.options[1] == undefined)
       {
+        let i =1;
         responsePaises.forEach(pais =>
-            { 
-                     let optionPais = document.createElement('option');
+            {        
+                      console.log("Primer entrada", pais.nombre,"pais Id", pais.paisId);
+                      let optionPais = document.createElement('option');
                       optionPais.innerHTML= `${pais.nombre}`;
                       optionPais.value = pais.paisId;
                       selectPaisesDepartamento.appendChild(optionPais);
+                      console.log(selectPaisesDepartamento.options[i].value);
+                      i++;
             });
+        
       }
       else
       {
-        for(let i = 1 ; i < responsePaises.length ; i++)
-        {
-            let idPaisSelect = parseInt(selectPaisesDepartamento.options[i].value);
-            let optionToRemove = selectPaisesDepartamento.querySelector(`option[value="${idPaisSelect}"]`);
-            console.log(optionToRemove);
-            selectPaisesDepartamento.removeChild(optionToRemove);
+        for(let i = 1 ; i <=responsePaises.length ; i++)
+        {   console.log(responsePaises.length, selectPaisesDepartamento.options.length,i);
+            let estado = false;
+            let idPaisSelect =0;
+            if(responsePaises.length == selectPaisesDepartamento.options.length)
+            {
+               idPaisSelect = parseInt(selectPaisesDepartamento.options[i-1].value);
+               console.log(idPaisSelect);
+               if(isNaN(idPaisSelect))
+               {
+                continue;
+               }
+            }
+            else if(responsePaises.length > selectPaisesDepartamento.options.length)
+            {
+                if((i-1) <= selectPaisesDepartamento.options.length)
+                {
+                    idPaisSelect = parseInt(selectPaisesDepartamento.options[i-1].value); 
+                    if(isNaN(idPaisSelect))
+                    {
+                     continue;
+                    }
+
+                 estado = true;
+                }
+            }
+            else
+            {
+                idPaisSelect = parseInt(selectPaisesDepartamento.options[i].value); 
+         
+
+            }  
+            if(!estado)
+           { 
+                let optionToRemove = selectPaisesDepartamento.querySelector(`option[value="${idPaisSelect}"]`);
+                console.log(optionToRemove);
+
+                selectPaisesDepartamento.removeChild(optionToRemove);
+            }
             let optionPais = document.createElement('option');
-            optionPais.innerHTML= `${responsePaises[i].nombre}`;
-            optionPais.value = responsePaises[i].paisId;
+            optionPais.innerHTML= `${responsePaises[i-1].nombre}`;
+            optionPais.value = responsePaises[i-1].paisId;
             selectPaisesDepartamento.appendChild(optionPais);
 
         }
@@ -139,10 +179,12 @@ export class DepartamentoController
         {
             val.addEventListener("click", (e)=>
             {
-                opcDepartamento['DELETE'](e.target.id);
-                setTimeout(() => {
+                opcDepartamento['DELETE'](e.target.id).then(()=>
+                {
                     this.GetDepartamentos();
-                }, 500); 
+                })
+                
+                
             })
         })
     }

@@ -34,6 +34,7 @@ export class ProveedorController
             })
         
         divListProveedor.innerHTML=listPorveedorHTML;
+        console.log(divListProveedor);
         this.DeleteProveedores();
         this.UpdateViewToPUTProveedores();
     }
@@ -45,7 +46,7 @@ export class ProveedorController
 
         listPorveedorHTML = /* html */
         `
-        <div class="col-sm-6">
+        <div class="col-sm-6 p-2">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">${proveedor.nombre}</h5>
@@ -72,10 +73,12 @@ export class ProveedorController
             val.addEventListener("click", (e)=>
             {
 
-                opcProveedor['DELETE'](e.target.id);
-                setTimeout(() => {
+                opcProveedor['DELETE'](e.target.id).then(()=>
+                {
                     this.GetAllProveedor();
-                }, 1000);
+                })
+                
+               
                 
 
 
