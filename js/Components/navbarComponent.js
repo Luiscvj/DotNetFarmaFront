@@ -160,7 +160,7 @@ class NavBarContent extends HTMLElement
       </div>
 
 
-      <!-- <div id="navEmpleado" >
+      <div id="navEmpleado" >
           <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
               
@@ -185,7 +185,7 @@ class NavBarContent extends HTMLElement
                   </div>
             </div>
         </nav>
-      </diV> -->
+      </diV>
 
       <div id="navMedicamento" >
           <nav class="navbar navbar-expand-lg navbar-light bg-light">
