@@ -27,7 +27,7 @@ class CiudadComponent extends HTMLElement
                                     </select>	
                                 </div>
                                 <div class="col">
-                                     <input type="text" class="form-control" placeholder="Nombre Ciudad" id="nombre" aria-label="First name" required>
+                                     <input type="text" class="form-control" placeholder="Nombre Ciudad" id="nombreCiudad" aria-label="First name" required>
                                 </div>         
                             </div>
 
@@ -67,7 +67,7 @@ class CiudadComponent extends HTMLElement
                             divVer.style.display = 'block';
                             if(opcion.includes("listarCiudad"))
                              {   
-                                this._ciudadController.GetCiudads();
+                                this._ciudadController.GetCiudades();
 
                              }
 
@@ -93,13 +93,13 @@ class CiudadComponent extends HTMLElement
         { 
             let datasetButtonFormRegister = buttonFormRegCiudad.dataset.action;
             let frmSucursal = document.forms['frmRegistroCiudad'];
-            let Nombre =frmSucursal['nombre'];
+            let Nombre =frmSucursal['nombreCiudad'];
     
             let   Ciudad = 
             {
                ciudadId : 0,
                nombre : Nombre.value,
-               ciudadId :selectIDDepartamento.value,       
+               departamentoId :selectIDDepartamento.value,       
             };
 
            if(datasetButtonFormRegister =="save")

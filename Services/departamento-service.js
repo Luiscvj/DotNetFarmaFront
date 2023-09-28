@@ -1,7 +1,7 @@
 const opcDepartamento =
 {
     "GET": () => GetDepartamentos(),
-    "POST": (data)=> PostDepartamentos(data),
+    "POST": (data)=> PostDepartamento(data),
     "PUT" : (id,data) => UpdateDepartamento(id,data),
     "DELETE":(id) => DeleteDepartamento(id)
 }
@@ -52,7 +52,7 @@ let GetDepartamentos = async () =>
 }
 
 
-let PostDepartamentos = async (data) =>
+let PostDepartamento = async (data) =>
 {
     let datos = JSON.stringify(data);
     
@@ -101,13 +101,13 @@ let DeleteDepartamento = async(id) =>
 
 let UpdateDepartamento = async (id,data) => 
 {
-    let datosPais = JSON.stringify(data);
+    let datosDepartamento = JSON.stringify(data);
     
     const config =
     {
         method  : "PUT",
         headers : Header.headers,
-        body    : datosPais
+        body    : datosDepartamento
     }
 
 

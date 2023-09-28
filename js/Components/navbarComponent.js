@@ -54,12 +54,12 @@ class NavBarContent extends HTMLElement
               </button>
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                          <a class="nav-link navCiudad"  data-verocultar='[["#frmRegCiudad","#divCiudad"],["#listarCiudad"]]'  aria-current="page" href="#">Registrar Ciudad</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link navCiudad" data-verocultar='[["#listarCiudad","#divCiudad"],["#frmRegCiudad"]]' href="#">Listar Ciudad</a>
-                        </li>
+                      <li class="nav-item">
+                        <a class="nav-link navCiudad "    data-hideformciudad='[["#divCiudad","#frmRegCiudad","#frmRegistroCiudad"],["#listarCiudad"]]' aria-current="page" href="#">Registrar Ciudad</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link  navCiudad"  data-hideformciudad='[["#divCiudad","#listarCiudad","#frmRegCiudad"],["#frmRegistroCiudad"]]' href="#">Listar Ciudades</a>
+                      </li>
                       
                     
                     </ul>
@@ -82,10 +82,10 @@ class NavBarContent extends HTMLElement
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                          <a class="nav-link navEps "    data-hideformeps='[["#divEps","#frmRegEps"],["#listEps"]]' aria-current="page" href="#">Registrar Eps</a>
+                          <a class="nav-link navEps "    data-hideformeps='[["#divEps","#formRegEps","#frmRegEps"],["#listEps"]]' aria-current="page" href="#">Registrar Eps</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link  navEps"  data-hideformeps='[["#divEps","#listEps"],["#frmRegEps"]]' href="#">Listar Epses</a>
+                          <a class="nav-link  navEps"  data-hideformeps='[["#divEps","#listEps","#frmRegEps"],["#formRegEps"]]' href="#">Listar Epses</a>
                         </li>
                       
                     
@@ -130,7 +130,7 @@ class NavBarContent extends HTMLElement
 
 
 
-      <div id="navDepartamento" >
+        <div id="navDepartamento" >
           <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
               
@@ -156,10 +156,10 @@ class NavBarContent extends HTMLElement
             </div>
         </nav>
 
-      </diV>
+      </div>
 
 
-      <div id="navEmpleado" >
+      <!-- <div id="navEmpleado" >
           <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
               
@@ -184,7 +184,7 @@ class NavBarContent extends HTMLElement
                   </div>
             </div>
         </nav>
-      </diV>
+      </diV> -->
 
         
         `

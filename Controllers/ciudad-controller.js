@@ -1,5 +1,5 @@
 import { opcCiudad } from "../Services/ciudad-service.js";
-export { opcDepartamento } from "../Services/departamento-service.js";
+import { opcDepartamento } from "../Services/departamento-service.js";
 export class CiudadController
 {
     constructor()
@@ -72,27 +72,66 @@ export class CiudadController
         let responseDepartamentos = await opcDepartamento['GET']();
       //me trae todas las opciones sin necesidad de usar values y los paso a array
       let selectDepartamentosCiudad =  document.querySelector("#selectDepartamentos");
+      console.log(selectDepartamentosCiudad.options[0]);
+
       if(selectDepartamentosCiudad.options[1] == undefined)
       {
-        responseDepartamentos.forEach(ciudad =>
+        let i = 1;
+        responseDepartamentos.forEach(departamento =>
             { 
-                     let optionCiudad = document.createElement('option');
-                      optionCiudad.innerHTML= `${ciudad.nombre}`;
-                      optionDepartamento.value = ciudad.ciudadId;
-                      selectDepartamentosCiudad.appendChild(optionDepartamento);
+                console.log("Primer entrada", departamento.nombre,"departamento Id", departamento.departamentoId);
+                let optionDepartamento = document.createElement('option');
+                optionDepartamento.innerHTML= `${departamento.nombre}`;
+                optionDepartamento.value = departamento.departamentoId;
+                selectDepartamentosCiudad.appendChild(optionDepartamento);
+                console.log(selectDepartamentosCiudad.options[i].value);
+                i++;
             });
       }
       else
       {
-        for(let i = 1 ; i < responseDepartamentos.length ; i++)
-        {
-            let idDepartamentoSelect = parseInt(selectDepartamentosCiudad.options[i].value);
-            let optionToRemove = selectDepartamentoesCiudad.querySelector(`option[value="${idDepartamentoSelect}"]`);
-            console.log(optionToRemove);
-            selectDepartamentosCiudad.removeChild(optionToRemove);
+        for(let i = 1 ; i <=responseDepartamentos.length ; i++)
+        {   console.log(responseDepartamentos.length, selectDepartamentosCiudad.options.length,i);
+            let estado = false;
+            let idDepartamentoSelect =0;
+            if(responseDepartamentos.length == selectDepartamentosCiudad.options.length)
+            {
+               idDepartamentoSelect = parseInt(selectDepartamentosCiudad.options[i-1].value);
+               console.log(idDepartamentoSelect);
+               if(isNaN(idDepartamentoSelect))
+               {
+                continue;
+               }
+            }
+            else if(responseDepartamentos.length > selectDepartamentosCiudad.options.length)
+            {
+                if((i-1) <= selectDepartamentosCiudad.options.length)
+                {
+                    idDepartamentoSelect = parseInt(selectDepartamentosCiudad.options[i-1].value); 
+                    if(isNaN(idDepartamentoSelect))
+                    {
+                     continue;
+                    }
+
+                 estado = true;
+                }
+            }
+            else
+            {
+                idDepartamentoSelect = parseInt(selectDepartamentosCiudad.options[i].value); 
+         
+
+            }  
+            if(!estado)
+           { 
+                let optionToRemove = selectDepartamentosCiudad.querySelector(`option[value="${idDepartamentoSelect}"]`);
+                console.log(optionToRemove);
+
+                selectDepartamentosCiudad.removeChild(optionToRemove);
+            }
             let optionDepartamento = document.createElement('option');
-            optionDepartamento.innerHTML= `${responseDepartamentos[i].nombre}`;
-            optionDepartamento.value = responseDepartamentos[i].departamentoId;
+            optionDepartamento.innerHTML= `${responseDepartamentos[i-1].nombre}`;
+            optionDepartamento.value = responseDepartamentos[i-1].departamentoId;
             selectDepartamentosCiudad.appendChild(optionDepartamento);
 
         }
