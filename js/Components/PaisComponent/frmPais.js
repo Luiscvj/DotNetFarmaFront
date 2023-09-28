@@ -22,7 +22,7 @@ class PaisComponent extends HTMLElement
                         <div>										
                             <div class="row  align-items-center">
                                 <div class="col">
-                                <input type="text" class="form-control" placeholder="Nombre Pais" id="nombre" aria-label="First name" required>
+                                <input type="text" class="form-control" placeholder="Nombre Pais" id="nombrePais" aria-label="First name" required>
                                 </div>
                             </div>	
 
@@ -32,14 +32,14 @@ class PaisComponent extends HTMLElement
                         <button type="button" id="guardarDataPais" data-action="save" class="btn btn-primary">Guardar Informacion</button>
                    </div>
         </form>			
-    </div>
-
-
-
-    <div class="row" id="listarPais" style="margin: 50px; display: none;  "  >                
-         
-    </div>
-
+        
+        
+        
+                <div class="row" id="listarPais" style="margin: 50px; display: none;  "  >                
+                
+                </div>
+        
+        </div>
         
         
         `
@@ -55,10 +55,15 @@ class PaisComponent extends HTMLElement
                     datosVerOcultar[0].forEach(opcion => 
                         {
                             let divVer = document.querySelector(opcion);
-                            divVer.style.display = 'block';
+                           
                             if(opcion.includes("listarPais"))
                              {   
                                 this._paisController.GetPaises();
+                                divVer.style.display = 'flex';
+                             }
+                             else
+                             {
+                                divVer.style.display = 'block';
                              }
 
 
@@ -78,7 +83,7 @@ class PaisComponent extends HTMLElement
             let datasetButtonFormRegister = buttonFormRegPais.dataset.action;
             console.log(datasetButtonFormRegister);
             let frmSucursal = document.forms['frmRegistroPais'];
-            let Nombre =frmSucursal['nombre'];
+            let Nombre =frmSucursal['nombrePais'];
            
             let   Pais = 
             {

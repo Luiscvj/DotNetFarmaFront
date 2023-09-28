@@ -34,9 +34,10 @@
 			<li>
 				<a href="#"><i class='bx bxs-notepad icon' ></i> Forms <i class='bx bx-chevron-right icon-right' ></i></a>
 				<ul class="side-dropdown">
-					<li><a class="entidades" data-verocultar='[["#navMenu","#navPais"],["#Dashboard","#navProveedor","#divProveedor", "#navDepartamento","#divDepartamento","#frmRegDepartamento","#frmRegProveedor"]]' href="#">Pais</a></li>
-					<li><a class="entidades" data-verocultar='[["#navMenu","#divProveedor","#navProveedor"],["#Dashboard","#navPais","#divPais", "#navDepartamento","#divDepartamento","#frmRegDepartamento"]]' href="#">Proveedor</a></li>
-					<li><a class="entidades" data-verocultar='[["#navMenu","#navDepartamento","#divDepartamento"],["#Dashboard","#navPais","#divProveedor","#divPais","#navProveedor","#frmRegProveedor"]]' href="#">Departamento</a></li>
+					<li><a class="entidades" data-verocultar='[["#navMenu","#divProveedor","#navProveedor"],["#Dashboard","#navPais","#divPais", "#navDepartamento","#divDepartamento","#frmRegDepartamento","#divEmpleado","#navEmpleado","#frmRegEmpleado"]]' href="#">Proveedor</a></li>
+					<li><a class="entidades" data-verocultar='[["#navMenu","#divEmpleado","#navEmpleado"],["#Dashboard","#navPais","#divPais", "#navDepartamento","#divDepartamento","#frmRegDepartamento","#divProveedor","#navProveedor"]]' href="#">Empleado</a></li>
+					<li><a class="entidades" data-verocultar='[["#navMenu","#navDepartamento","#divDepartamento"],["#Dashboard","#navPais","#divProveedor","#divPais","#navProveedor","#frmRegProveedor","#divEmpleado","#navEmpleado","#frmRegEmpleado"]]' href="#">Departamento</a></li>
+					<li><a class="entidades" data-verocultar='[["#navMenu","#navPais"],["#Dashboard","#navProveedor","#divProveedor", "#navDepartamento","#divDepartamento","#frmRegDepartamento","#frmRegProveedor","#divEmpleado","#navEmpleado","#frmRegEmpleado"]]' href="#">Pais</a></li>
 					<li><a class="entidades" href="#">Checkbox</a></li>
 					<li><a class="entidades" href="#">Radio</a></li>
 				</ul>
@@ -99,6 +100,11 @@
 				<frm-reglist-departamento></frm-reglist-departamento>
 		   </div>
 
+		   <div id="divEmpleado" style="display: none">
+			
+				<frm-reglist-empleado></frm-reglist-empleado>
+			</div>
+ 
 
 
 
@@ -119,5 +125,8 @@
 		<!-- MAIN -->
 	</section>
 	<!-- NAVBAR -->
+
+
+	
 </body>
 </html>

@@ -18,19 +18,19 @@ class  ProveedorComponent extends HTMLElement
         this.innerHTML =  /* html */
         `
       
-  <div class="card-header" id="frmRegProveedor" style="margin: 50px; display: none; border-radius:10px "  >  
-      <form id="formRegProveedor">
+  <div class="card-header" id="frmRegProveedor" style="margin: 50px; border-radius:10px "  >  
+      <form id="formRegProveedor"  style="margin: 50px; border-radius:10px ;display : none">
             <div class="row">
-                    <div class="col-sm-4" style ="padding: 4px" >
-                        <input type="text" class="form-control" placeholder="Nombre" id="nombre" aria-label="First name"  required>
+                    <div class="col-sm-6" style ="padding: 4px" >
+                        <input type="text" class="form-control" placeholder="Nombre" id="nombreProveedor" aria-label="First name"  required>
                     </div>
-                    <div class="col-sm-4" style ="padding: 4px">
+                    <div class="col-sm-6" style ="padding: 4px">
                         <input type="text" class="form-control" placeholder="Telefono" id="telefono" aria-label="Last name" required>
                     </div>
-                    <div class="col-sm-4" style ="padding: 4px">
+                    <div class="col-sm-6" style ="padding: 4px">
                         <input type="email" class="form-control" placeholder=" Email" id="email" aria-label="First name" required>
                     </div>
-                    <div class="col-sm-5" style ="padding: 4px">
+                    <div class="col-sm-6" style ="padding: 4px">
                         <input type="text" class="form-control" placeholder="Direccion" id="direccion" aria-label="Last name" required>
                     </div>
             </div>
@@ -39,15 +39,15 @@ class  ProveedorComponent extends HTMLElement
                  <button type="button" id="guardarDataProveedor" data-action="save" class="btn btn-primary">Guardar Informacion</button>
             </div>
       </form>  
-  </div>
 
 
 
-   <div class="row" id ="listProveedor" style="display: none">
+
+   <div class="row" id ="listProveedor" style="display: block">
         
     </div>
     
-  
+  </div>
   
         `
     }
@@ -66,9 +66,18 @@ eventoOcultarRegListProveedor = ()=>
                     
                     let divVer = document.querySelector(divProveedor);
                     if(divProveedor.includes("listProveedor"))this._proveedorController.GetAllProveedor();
+                    if(divProveedor.includes("formRegProveedor")) 
+                    {
+                        divVer.style.display = 'block';
+                      
+                    }else
+                    {
                         
                                             
-                    divVer.style.display = 'block';
+                    divVer.style.display = 'flex';
+
+                    }
+             
                     
                 });
               
@@ -94,7 +103,7 @@ guardarDataOrUpdate = async () =>
         let datasetButtonFormRegister = buttonFormRegProveedor.dataset.action;
         console.log(datasetButtonFormRegister);
         let frmSucursal = document.forms['formRegProveedor'];
-        let Nombre =frmSucursal['nombre'];
+        let Nombre =frmSucursal['nombreProveedor'];
         let Telefono =  frmSucursal['telefono'];
         let Email = frmSucursal['email'];
         let Direccion = frmSucursal['direccion'];

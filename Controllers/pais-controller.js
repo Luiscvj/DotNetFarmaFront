@@ -35,7 +35,7 @@ CartaPaisHTML = (pais)=>
 {
     let cardPais = /* html */  
     `
-    <div class="col-sm-6">
+    <div class="col-sm-6 p-2">
         <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">${pais.nombre}</h5>
@@ -78,10 +78,12 @@ DeletePaises = () =>
         val.addEventListener("click", (e)=>
         {
 
-            opc['DELETE'](e.target.id);
-            setTimeout(() => {
+            opc['DELETE'](e.target.id).then(()=>
+            {
                 this.GetPaises();
-            }, 1000);
+            })
+                
+         
             
 
 
