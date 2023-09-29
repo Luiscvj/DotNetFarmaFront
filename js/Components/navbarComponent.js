@@ -197,10 +197,10 @@ class NavBarContent extends HTMLElement
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                          <a class="nav-link navMedicamento "    data-hideformempleado='[["#divMedicamento","#cardMedicamento"],["#listarMedicamento","#cardHeaderMedicamento"]]' aria-current="page" href="#">Comprar Medicamento</a>
+                          <a class="nav-link navMedicamento "    data-hideformmedicamento='[["#divMedicamento","#cardMedicamento"],["#listarMedicamento","#cardHeaderMedicamento"]]' aria-current="page" href="#">Comprar Medicamento</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link  navMedicamento"  data-hideformempleado='[["#divMedicamento","#listarMedicamento","#cardHeaderMedicamento"],["#cardMedicamento"]]' href="#">Listar Medicamento</a>
+                          <a class="nav-link  navMedicamento"  data-hideformmedicamento='[["#divMedicamento","#listarMedicamento","#cardHeaderMedicamento"],["#cardMedicamento"]]' href="#">Listar Medicamento</a>
                         </li>
                       
                     
