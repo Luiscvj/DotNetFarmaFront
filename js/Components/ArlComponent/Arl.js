@@ -77,10 +77,10 @@ class Arl extends HTMLElement
                     <td>${arl.email}</td>
                     <td>${arl.direccion}</td>
                     <td>
-                        <button id="deleteArl" class="btn border border-3 border-danger text-danger" data-idDelete="${arl.arlId}">
+                        <button id="deleteArl" class="btn btn btn-danger text-white" data-idDelete="${arl.arlId}">
                             ELIMINAR
                         </button>
-                        <button id="putArl" type="button" class="btn border border-3 border-warning text-warning" data-idPut="${arl.arlId}" data-bs-toggle="modal" data-bs-target="#editarArl">
+                        <button id="putArl" type="button" class="btn btn-warning text-white" data-idPut="${arl.arlId}" data-bs-toggle="modal" data-bs-target="#editarArl">
                             EDITAR
                         </button>
                     </td>
