@@ -45,7 +45,7 @@ export class EpsController
 
         listEpsHTML = /* html */
         `
-        <div class="col-sm-6">
+        <div class="col-sm-6 p-2">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">${eps.nombre}</h5>
