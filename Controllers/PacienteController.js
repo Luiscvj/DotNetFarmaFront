@@ -21,7 +21,7 @@ export class PacienteController extends Fetch
         return this.fetch(url, options)    
     }
 
-    controllerPostPaciente(data)
+    controllerPostPaciente(data, token)
     {
         let url = "http://localhost:5000/api/Paciente"
         let options = 
@@ -29,7 +29,8 @@ export class PacienteController extends Fetch
             method : "POST",
             headers : new Headers
             ({
-                "Content-Type":"application/json"
+                "Content-Type":"application/json",
+                "Authorization": `Bearer ${token}`
             }),
             body : JSON.stringify(data)
         }

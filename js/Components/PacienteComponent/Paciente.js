@@ -100,6 +100,7 @@ class Paciente extends HTMLElement
     postDataPaciente()
     {
         const formPostPaciente = document.querySelector("#postFormPaciente")
+        const token = localStorage.getItem("token");
         formPostPaciente.addEventListener("submit", event => 
         {
             event.preventDefault()
@@ -112,14 +113,14 @@ class Paciente extends HTMLElement
                 telefono  : document.querySelector("#txtTelefonoPostPaci").value
             }
 
-            this.postPaciente(data, formPostPaciente)
+            this.postPaciente(data, formPostPaciente, token)
         })
         
     }
 
-    postPaciente(data, formulario)
+    postPaciente(data, formulario, token)
     {
-        this.fetch.controllerPostPaciente(data)
+        this.fetch.controllerPostPaciente(data, token)
         .then(() => 
         {
             this.getPaciente()

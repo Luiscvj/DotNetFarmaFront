@@ -15,6 +15,8 @@ if (!localStorage.getItem('token'))
   window.location.href = 'index.html';
 }
 
+import '../Components/UsuarioComponent/Usuario.js'
+
 /* import { PaisController } from '../../Controllers/pais-controller.js';
 let _paisController = new PaisController();
 
