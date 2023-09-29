@@ -80,12 +80,7 @@ sidebar.addEventListener('mouseenter', function () {
 	}
 })
 // PROFILE DROPDOWN
-const profile = document.querySelector('nav .profile');
-const imgProfile = profile.querySelector('img');
-const dropdownProfile = profile.querySelector('.profile-link');
-imgProfile.addEventListener('click', function () {
-	dropdownProfile.classList.toggle('show');
-})
+
 // MENU
 const allMenu = document.querySelectorAll('main .content-data .head .menu');
 allMenu.forEach(item=> {
@@ -96,28 +91,7 @@ allMenu.forEach(item=> {
 		menuLink.classList.toggle('show');
 	})
 })
-window.addEventListener('click', function (e) {
-	if(e.target !== imgProfile) {
-		if(e.target !== dropdownProfile) {
-			if(dropdownProfile.classList.contains('show')) {
-				dropdownProfile.classList.remove('show');
-			}
-		}
-	}
 
-	allMenu.forEach(item=> {
-		const icon = item.querySelector('.icon');
-		const menuLink = item.querySelector('.menu-link');
-
-		if(e.target !== icon) {
-			if(e.target !== menuLink) {
-				if (menuLink.classList.contains('show')) {
-					menuLink.classList.remove('show')
-				}
-			}
-		}
-	})
-})
 // PROGRESSBAR
 const allProgress = document.querySelectorAll('main .card .progress');
 allProgress.forEach(item=> {

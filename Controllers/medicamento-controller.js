@@ -1,5 +1,6 @@
 import { opcMedicamento } from "../Services/medicamento-service.js";
 import { opcProveedor } from "../Services/proveedor-service.js";
+import { Fetch } from "./Fetch.js";
 
 export class MedicamentoController 
 {
@@ -18,6 +19,7 @@ export class MedicamentoController
         this.FechaCompra =this.frmMedicamento['fechaCompra'];
         this.PrecioCompra = this.frmMedicamento['precioCompra'];
         this.Proveedor =this.frmMedicamento['selectProveedorMedicamento'];
+        this.fetch = new Fetch()
     }
 /*
 *GET de medicamentos **********************************************
@@ -282,6 +284,5 @@ DeleteMedicamentos = () =>
     });
 
 }
-
     
 }

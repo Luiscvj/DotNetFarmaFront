@@ -64,4 +64,18 @@ export class PacienteController extends Fetch
         }
         return this.fetch(url, options)
     }
+
+    controllerGetPacienteMasDineroGastado() 
+    {
+        let url = "http://localhost:5000/api/Paciente/masDineroGastado"
+        let options = 
+        {
+            method : "GET",
+            headers : new Headers
+            ({
+                "Content-Type":"application/json"
+            })
+        }
+        return this.fetch(url, options)    
+    }
 }

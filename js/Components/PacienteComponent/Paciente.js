@@ -12,6 +12,7 @@ class Paciente extends HTMLElement
         this.render()
         this.getPaciente()
         this.postDataPaciente()
+        this.selectConsultas()
     }
     
     render = () => 
@@ -19,11 +20,16 @@ class Paciente extends HTMLElement
         this.innerHTML = 
         `
             <div class="container pt-5">
-                <div class="card">
-                    <div class="card-header">
+                <div class="card" id="card">
+                    <div class="card-header d-flex" style="gap: 10px;">
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registrarPaciente">
                             REGISTRAR
-                        </button>              
+                        </button>    
+                        <select id="selectConsultasPaciente" class="form-select w-50" aria-label="Default select example">
+                            <option selected>Open this select menu</option>
+                            <option value="1">Paciente mas dinero gastado</option>
+                            <option value="2">Listar</option>
+                        </select>
                     </div>
                     <div class="card-body">
                         <div class="overflow-auto" style="height: 400px;">
@@ -190,5 +196,88 @@ class Paciente extends HTMLElement
             })  
         })
     }
+
+    selectConsultas()
+    {
+        let select = document.querySelector("#selectConsultasPaciente")
+    
+        select.addEventListener("change", event => 
+        {
+            let option = select.value
+            
+            switch (option) 
+            {
+                case "1":
+                    this.getPacienteMasDineroGastado()
+                    break;
+                case "2":
+                    this.getPaciente()
+                    break;
+                default:
+                    console.log("sin opcion");  
+                break;
+            }
+        })
+    }
+
+    getPacienteMasDineroGastado()
+    {
+        this.fetch.controllerGetPacienteMasDineroGastado()
+        .then(res => 
+        {
+            let data = res
+
+            document.querySelector("#card").innerHTML = 
+            `
+                <div class="card-header d-flex" style="gap: 10px;">
+                    <select id="selectConsultasPaciente" class="form-select w-50" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option value="1">Paciente mas dinero gastado</option>
+                        <option value="2">Listar</option>
+                    </select>
+                </div>
+                <div class="card-body">
+                    <div class="overflow-auto" style="height: 400px;">
+                        <table class="table table-striped-columns text-center">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Apellido</th>
+                                    <th scope="col">Direccion</th>
+                                    <th scope="col">Telefono</th>
+                                    <th scope="col">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody id="containerLista">
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            `
+
+            const containerLista = document.querySelector("#containerLista")
+            containerLista.innerHTML = ""
+            data.forEach(paciente => 
+            {
+            containerLista.innerHTML += 
+            `
+                <tr>
+                    <th>${paciente.paciente.pacienteId}</th>
+                    <td>${paciente.paciente.nombre}</td>
+                    <td>${paciente.paciente.apellidos}</td>
+                    <td>${paciente.paciente.direccion}</td>
+                    <td>${paciente.paciente.telefono}</td>
+                    <td>${paciente.gastoTotalEn2023}</td>
+                </tr>
+            `
+            })
+
+        })
+        .catch(error => console.log(error))
+    }
+
+
 }
 customElements.define("paciente-component", Paciente);
