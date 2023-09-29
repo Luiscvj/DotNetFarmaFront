@@ -1,14 +1,13 @@
-const opcMedicamentoCompra =
+const opcVenta =
 {
-    "GET" : () => GetMedicamentoCompra(),
-    "GETBYID":(id) => GetByIdMedicamentoCompra(id),
-    "POST": (data) => PostMedicamentoCompra(data),
-    "PUT" : (id,data)=> UpdateMedicamentoCompra(id,data),
-    "DELETE" :(id) => DeleteMedicamentoCompra(id)
+    "GET": () => GetVenta(),
+    "POST": (data)=> PostVenta(data),
+    "POSTAll": (data)=> PostVentaAll(data),
+    "PUT" : (id,data) => UpdateVenta(id,data),
+    "DELETE":(id) => DeleteVenta(id)
 }
 
-
-const URL_API ='http://localhost:5000/api/MedicamentoCompra';
+const URL_API ='http://localhost:5000/api/Venta';
 const Header =
 {
     headers : new Headers
@@ -18,7 +17,8 @@ const Header =
 }
 
 
-let GetMedicamentoCompra = async () => 
+
+let GetVenta = async () => 
 {   
     const config =
     {
@@ -28,7 +28,7 @@ let GetMedicamentoCompra = async () =>
   
     try 
     {
-            let res = await fetch(`${URL_API}/GetAllMedicamentoCompraFechaCompra`,config);
+            let res = await fetch(`${URL_API}`,config);
 
             if(res.status == 200)
             {
@@ -52,29 +52,36 @@ let GetMedicamentoCompra = async () =>
     }
 }
 
-let  GetByIdMedicamentoCompra = async(id)=>
-{    
-    const config =
-    {
-        method : "GET",
-        headers : Header.headers
-    }
-  
+
+let PostVentaAll = async (data) =>
+{
+    let datos = JSON.stringify(data);
+    
+
     try
     {
-        let response = await fetch(`${URL_API}/${id}`,config);
-        if(response.status == 200)
+        const config =
         {
+            method : "POST",
+            headers : Header.headers,
+            body : datos        
+        }
+
+        let response = await fetch(`${URL_API}/AddRange`,config);
+
+        if (response.status == 201)
+        {
+            console.log("Registro exitosa");
             return await response.json();
         }
+
     }catch(error)
     {
         console.error(error);
     }
 }
 
-
-let PostMedicamentoCompra = async (data) =>
+let PostVenta = async (data) =>
 {
     let datos = JSON.stringify(data);
     
@@ -102,7 +109,7 @@ let PostMedicamentoCompra = async (data) =>
     }
 }
 
-let DeleteMedicamentoCompra = async(id) =>
+let DeleteVenta = async(id) =>
 {
     const  config = 
     {
@@ -121,8 +128,8 @@ let DeleteMedicamentoCompra = async(id) =>
 
 }
 
-let UpdateMedicamentoCompra = async (id,data) => 
-{    console.log(id,data);
+let UpdateVenta = async (id,data) => 
+{
     let datosPais = JSON.stringify(data);
     
     const config =
@@ -150,6 +157,5 @@ let UpdateMedicamentoCompra = async (id,data) =>
 
 export 
 {
-    opcMedicamentoCompra
+    opcVenta
 }
-

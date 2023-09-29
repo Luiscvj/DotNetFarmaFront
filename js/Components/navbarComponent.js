@@ -98,7 +98,6 @@ class NavBarContent extends HTMLElement
                   </div>
             </div>
         </nav>
-
       </diV>
 
       <div id="navProveedor" >
@@ -200,7 +199,11 @@ class NavBarContent extends HTMLElement
                           <a class="nav-link navMedicamento "    data-hideformmedicamento='[["#divMedicamento","#cardMedicamento"],["#listarMedicamento","#cardHeaderMedicamento"]]' aria-current="page" href="#">Comprar Medicamento</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link  navMedicamento"  data-hideformmedicamento='[["#divMedicamento","#listarMedicamento","#cardHeaderMedicamento"],["#cardMedicamento"]]' href="#">Listar Medicamento</a>
+                          <a class="nav-link  navMedicamento"  data-hideformmedicamento='[["#divMedicamento","#listarMedicamento","#cardHeaderMedicamento"],["#cardMedicamento","#medicamentoCompraTabla"]]' href="#">Listar Medicamento</a>
+                        </li>
+
+                        <li class="nav-item">
+                          <a class="nav-link  navMedicamento"  data-hideformmedicamento='[["#divMedicamento","#medicamentoCompraTabla"],["#cardMedicamento","#listarMedicamento","#cardHeaderMedicamento"]]' href="#">Listar Compras de Medicamentos</a>
                         </li>
                       
                     
@@ -213,6 +216,32 @@ class NavBarContent extends HTMLElement
             </div>
         </nav>
       </diV>
+
+
+
+      <div id="navVenta" >
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link  navVenta"  data-hideformventa='[["#divVenta","#frmRegEmpleado","#listarEmpleados"],["#frmEmpleado"]]' href="#">Listar ventas</a>
+                    </li>
+                  
+                
+                </ul>
+                <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+        </div>
+    </nav>
+  </diV>
 
         
         `

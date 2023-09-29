@@ -17,34 +17,39 @@
 <body>
 	<!-- SIDEBAR -->
 	<section id="sidebar">
-		<a href="#" class="brand"><i class='bx bxs-smile icon'></i> DotNetFarma</a>
+		<a href="#" class="brand text-center"><i class="p-3 fs-6">C#</i><span class="fw-bold p-2">DotNetFarma</span></a>
 		<ul class="side-menu">
-			<li><a href="#" class="active"><i class='bx bxs-dashboard icon' ></i> Dashboard</a></li>
+			<li><a href="#" class="active" id="logout"><i class='bx bx-log-out icon' ></i> Cerrar Sesion </a></li>
 			<li class="divider" data-text="main">Main</li>
 			<li>
-				<a href="#"><i class='bx bxs-inbox icon' ></i> Elements <i class='bx bx-chevron-right icon-right' ></i></a>
+				<a href="#"><i class='bx bxs-capsule icon'></i> Productos <i class='bx bx-chevron-right icon-right' ></i></a>
 				<ul class="side-dropdown">
-					<li><a href="#" class="entidades" data-verocultar='[["#navMenu","#navMedicamento","#divMedicamento"],["#Dashboard","#navPais","#divPais","#navDepartamento","#divDepartamento","#frmRegDepartamento","#divProveedor","#navProveedor","#divEmpleado","#navEmpleado","#frmRegEps","#navEps","#divEps","#navCiudad","#divCiudad","#frmRegCiudad"]]'>Medicamento</a></li>
-					<li><a href="#">Badges</a></li>
-					<li><a href="#">Breadcrumbs</a></li>
-					<li><a href="#">Button</a></li>
+					<li><a href="#" class="entidades" data-verocultar='[["#navMenu","#navMedicamento","#divMedicamento"],["#Dashboard","#navPais","#divPais","#navDepartamento","#divDepartamento","#frmRegDepartamento","#divProveedor","#navProveedor","#divEmpleado","#navEmpleado","#frmRegEps","#navEps","#divEps","#navCiudad","#divCiudad","#frmRegCiudad","#divVenta","#navVenta"]]'>Medicamento</a></li>
+					<li><a href="#"class="entidades" data-verocultar='[["#navMenu","#navVenta","#divVenta"],["#Dashboard","#navPais","#divPais","#navDepartamento","#divDepartamento","#frmRegDepartamento","#divProveedor","#navProveedor","#divEmpleado","#navEmpleado","#frmRegEps","#navEps","#divEps","#navCiudad","#divCiudad","#frmRegCiudad","#navMedicamento","#divMedicamento"]]'>Venta</a></li>
 				</ul>
 			</li>
-			<li><a href="#"><i class='bx bxs-chart icon' ></i> Charts</a></li>
-			<li><a href="#"><i class='bx bxs-widget icon' ></i> Widgets</a></li>
-			<li class="divider" data-text="table and fors">Table and fors</li>
-			<li><a href="#"><i class='bx bx-table icon' ></i> Tables</a></li>
 			<li>
-				<a href="#"><i class='bx bxs-notepad icon' ></i> Forms <i class='bx bx-chevron-right icon-right' ></i></a>
+				<a href="#"><i class='bx bx-user icon'></i> Gestion <i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					
+					<li><a class="entidades" data-verocultar='[["#navMenu","#divProveedor","#navProveedor"],["#Dashboard","#navPais","#divPais","#navDepartamento","#divDepartamento","#frmRegDepartamento","#navCiudad","#frmRegCiudad","#frmRegEps","#divCiudad","#navEps","#divEps","#frmRegPais","#divEmpleado","#navEmpleado","#navMedicamento","#divMedicamento"]]' href="#">Proveedores</a></li>
+					<li><a class="entidades" data-verocultar='[["#navMenu","#divEmpleado","#navEmpleado"],["#Dashboard","#navPais","#divPais", "#navDepartamento","#divDepartamento","#frmRegDepartamento","#divProveedor","#navProveedor","#navMedicamento","#divMedicamento","#frmRegEps","#navEps","#divEps","#navCiudad","#divCiudad","#frmRegCiudad"]]' href="#">Empleados</a></li>
+					<li><a class="entidades" data-verocultar='[["#navMenu","#divEmpleado","#navEmpleado"],["#Dashboard","#navPais","#divPais", "#navDepartamento","#divDepartamento","#frmRegDepartamento","#divProveedor","#navProveedor","#navMedicamento","#divMedicamento","#frmRegEps","#navEps","#divEps","#navCiudad","#divCiudad","#frmRegCiudad"]]' href="#">Pacientes</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#"><i class='bx bx-buildings icon'></i> Zonas <i class='bx bx-chevron-right icon-right' ></i></a>
 				<ul class="side-dropdown">
 					<li><a class="entidades" data-verocultar='[["#navMenu","#navPais"],["#Dashboard","#navProveedor","#divProveedor","#navDepartamento","#divDepartamento","#frmRegDepartamento","#frmRegProveedor","#frmRegCiudad","#frmRegEps","#navCiudad","#divCiudad","#navEps","#divEps","#divEmpleado","#navEmpleado","#navMedicamento","#divMedicamento"]]' href="#">Pais</a></li>
-					<li><a class="entidades" data-verocultar='[["#navMenu","#divProveedor","#navProveedor"],["#Dashboard","#navPais","#divPais","#navDepartamento","#divDepartamento","#frmRegDepartamento","#navCiudad","#frmRegCiudad","#frmRegEps","#divCiudad","#navEps","#divEps","#frmRegPais","#divEmpleado","#navEmpleado","#navMedicamento","#divMedicamento"]]' href="#">Proveedor</a></li>
-					<li><a class="entidades" data-verocultar='[["#navMenu","#divEmpleado","#navEmpleado"],["#Dashboard","#navPais","#divPais", "#navDepartamento","#divDepartamento","#frmRegDepartamento","#divProveedor","#navProveedor","#navMedicamento","#divMedicamento","#frmRegEps","#navEps","#divEps","#navCiudad","#divCiudad","#frmRegCiudad"]]' href="#">Empleado</a></li>
 					<li><a class="entidades" data-verocultar='[["#navMenu","#navDepartamento","#divDepartamento"],["#Dashboard","#navPais","#divProveedor","#divPais","#navProveedor","#frmRegProveedor","#navCiudad","#divCiudad","#navEps","#divEps","#frmRegCiudad","#frmRegEps","#frmRegPais","#divEmpleado","#navEmpleado","#navMedicamento","#divMedicamento"]]' href="#">Departamento</a></li>
 					<li><a class="entidades" data-verocultar='[["#navMenu","#navCiudad","#divCiudad"],["#Dashboard","#navPais","#divProveedor","#divPais","#navProveedor","#frmRegProveedor","#navDepartamento","#divDepartamento","#navEps","#divEps","#frmRegDepartamento","#frmRegEps","#frmRegPais","#divEmpleado","#navEmpleado","#navMedicamento","#divMedicamento"]]' href="#">Ciudad</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#"><i class='bx bx-briefcase-alt-2 icon'></i> Seguro <i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					<li><a class="entidades" data-verocultar='[["#navMenu","#divEmpleado","#navEmpleado"],["#Dashboard","#navPais","#divPais", "#navDepartamento","#divDepartamento","#frmRegDepartamento","#divProveedor","#navProveedor","#navMedicamento","#divMedicamento","#frmRegEps","#navEps","#divEps","#navCiudad","#divCiudad","#frmRegCiudad"]]' href="#">Arl</a></li>
 					<li><a class="entidades" data-verocultar='[["#navMenu","#navEps","#divEps"],["#Dashboard","#navPais","#divProveedor","#divPais","#navProveedor","#frmRegProveedor","#navDepartamento","#divDepartamento","#navCiudad","#divCiudad","#frmRegDepartamento","#frmRegCiudad","#frmRegPais","#divEmpleado","#navEmpleado","#navMedicamento","#divMedicamento"]]' href="#">Eps</a></li>
-					<li><a class="entidades" href="#">Checkbox</a></li>
-					<li><a class="entidades" href="#">Radio</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -74,7 +79,13 @@
 
 		<!-- MAIN -->
 		<main>
+
+			
 			<div id="Dashboard">
+
+
+
+
 
 				<h1 class="title">Dashboard</h1>
 				<ul class="breadcrumbs">
@@ -82,6 +93,12 @@
 					<li class="divider">/</li>
 					<li><a href="#" class="active">Dashboard</a></li>
 				</ul>
+
+
+
+
+
+				
 
 			</div>
 
@@ -120,9 +137,19 @@
 
 			<div id="divEps" style="display:none;" >
 					<frm-reglist-eps></frm-reglist-eps>
+
+	
 			</div>
-		   
-		
+
+
+			<div id="divVenta" style="display:none;" >
+				<frm-reglist-venta></frm-reglist-venta>
+			</div>
+
+			<div id="" class="p-2">
+                <arl-component></arl-component>
+            </div>
+			
 		
 		<!-- <div class="dropdown" >
 			  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
