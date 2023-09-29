@@ -8,6 +8,7 @@ import '../Components/EmpleadoComponent/frmEmpleado.js'
 import '../Components/MedicamentoComponent/frmMedicamento.js'
 import "../Components/ArlComponent/Arl.js";
 import "../Components/PacienteComponent/Paciente.js";
+import "../Components/VentaComponent/frmVenta.js"
 
 if (!localStorage.getItem('token')) 
 {

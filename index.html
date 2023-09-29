@@ -30,11 +30,11 @@
                         <div class="card-body">
                             <form id="inicioSesion" class="text-center">
                                 <div class="form-group">
-                                    <label class="fw-semibold" for="txtUsername">Nombre de Usuario</label>
+                                    <label class="fw-semibold" for="txtUsername">Nombre de Usuario:</label>
                                     <input type="text" class="form-control" id="txtUsername" name="username" required>
                                 </div>
                                 <div class="form-group">
-                                    <label class="fw-semibold" for="txtPassword">Contraseña</label>
+                                    <label class="fw-semibold" for="txtPassword">Contraseña:</label>
                                     <div class="input-group">
                                         <input type="password" class="form-control" id="txtPassword" name="password" required>
                                         <div class="input-group-append">
@@ -66,7 +66,7 @@
         <script>
             // Función para mostrar u ocultar la contraseña
             const showPasswordBtn = document.getElementById('showPasswordBtn');
-            const passwordInput = document.getElementById('txtPassword');
+            const passwordInput = document.getElementById('password');
             showPasswordBtn.addEventListener('click', function () {
                 if (passwordInput.type === 'password') {
                     passwordInput.type = 'text';

@@ -97,8 +97,47 @@ class MedicamentoComponent extends HTMLElement
 
 
                 </div>
+
+
+
+
+
+
+
+               
         </div>
+
+
+        
+
+
+
+
     </div>
+
+
+     <table class="table" id="medicamentoCompraTabla" style="display:none" >
+     <thead>
+       <tr>
+         <th scope="col">#</th>
+         <th scope="col">Uds Compradaa</th>
+         <th scope="col">Total Compra</th>
+         <th scope="col">Fecha Compra</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Id Medicamento</th>
+       </tr>
+     </thead>
+     <tbody>
+    
+     </tbody>
+   </table>
+
+
+
+
+
+
+
         `
     }
 
@@ -122,6 +161,7 @@ class MedicamentoComponent extends HTMLElement
                 val.addEventListener("click",(e)=>
                 {
                     let datosVerOcultar = JSON.parse(e.target.dataset.hideformmedicamento);
+                   
                     datosVerOcultar[0].forEach(opcion => 
                         {
                             let divVer = document.querySelector(opcion);
@@ -132,15 +172,24 @@ class MedicamentoComponent extends HTMLElement
                                 this._medicamentoController.GetAllMedicamento();
                                 this._medicamentoController.DeleteMedicamentos();
                              }
-                             if(opcion.includes("cardMedicamento"))
+                            else if(opcion.includes("cardMedicamento"))
                              {
                                 this._medicamentoController.cargaSelectMedicamento();
+                             }
+                             else
+                             {
+                                divVer.style.display = 'block'
+                                this._medicamentoCompraController.GetMedicamentoCompra();
                              }
 
 
                         })
-                    let divOcultar = document.querySelector(datosVerOcultar[1]);
-                    divOcultar.style.display = 'none';
+                    /* let divOcultar = document.querySelector( */
+                    datosVerOcultar[1].forEach(opcion=>
+                        {
+                            let divOcultar =  document.querySelector(opcion);
+                            divOcultar.style.display = 'none';
+                        })
                 })
             })
     }
