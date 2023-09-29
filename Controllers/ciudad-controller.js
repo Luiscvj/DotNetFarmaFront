@@ -30,12 +30,12 @@ export class CiudadController
     {
         let cardCiudad = /* html */  
         `
-        <div class="col-sm-6">
-            <div class="card" style="width: 18rem;">
+        <div class="col-sm-6 p-2">
+            <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">${ciudad.nombre}</h5>
                         <p class="card-text"></p>
-                        <a href="#" class="btn btn-warning updateCiudadButtons" id="${ciudad.ciudadId}">editar</a>
+                        <a href="#" class="btn btn-warning updateCiudadButtons" id="${ciudad.ciudadId}">Editar</a>
                         <a href="#" class="btn btn-danger deleteCiudad" id="${ciudad.ciudadId}">Eliminar</a>
                     </div>
             </div> 	  
