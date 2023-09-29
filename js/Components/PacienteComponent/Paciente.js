@@ -2,7 +2,7 @@ import { PacienteController } from "../../../Controllers/PacienteController.js"
 import { PostFormPaciente } from "./PostFormPaciente.js"
 import { PutFormPaciente } from "./PutFormPaciente.js"
 
-class Paciente extends HTMLElement
+export class Paciente extends HTMLElement
 {
     constructor()
     {
@@ -59,12 +59,13 @@ class Paciente extends HTMLElement
 
     getPaciente()
     {
-        this.fetch.controllerGetPaciente()
+       return  this.fetch.controllerGetPaciente()
         .then(data => 
         {
             this.pacientes = data
             console.log(data);
             this.mostrarPacientes(data)
+            return data;
         })
         .catch(err => console.log(`Error: ${err}`))
     }

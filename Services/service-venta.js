@@ -67,7 +67,7 @@ let PostVentaAll = async (data) =>
             body : datos        
         }
 
-        let response = await fetch(`${URL_API}/AddRange`,config);
+        let response = await fetch(`${URL_API}`,config);
 
         if (response.status == 201)
         {

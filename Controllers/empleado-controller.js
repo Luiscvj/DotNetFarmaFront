@@ -1,6 +1,5 @@
 import { opcEmpleado } from "../Services/empleado-service.js";
 import { Fetch } from "./Fetch.js";
-
 export class EmpleadoController
  {
     constructor()
@@ -108,7 +107,7 @@ CartaEmpleadoHTML = (empleado)=>
         let responseEps = await  (await fetch(`${this.URL_API_EPS}`,config)).json();
         let responseCargo = await  (await fetch(`${this.URL_API_CARGO}`,config)).json();
         
-        console.log(responseEps);
+        console.log(responseCargo);
         responseArl.forEach(arl=>
             {   
                 let optionArl = document.createElement('option');
