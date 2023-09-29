@@ -1,5 +1,6 @@
 
 import { EmpleadoController } from "../../Controllers/empleado-controller.js";
+
 class NavBarContent extends HTMLElement
 {
     constructor()
@@ -229,7 +230,7 @@ class NavBarContent extends HTMLElement
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                      <a class="nav-link  navVenta"  data-hideformventa='[["#divVenta","#frmRegEmpleado","#listarEmpleados"],["#frmEmpleado"]]' href="#">Listar ventas</a>
+                      <a class="nav-link  navVenta"  data-hideformventa='[["#divVenta","#sectionCarritoCompras"],["#frmEmpleado"]]' href="#"> Carrito de compras</a>
                     </li>
                   
                 
@@ -262,7 +263,12 @@ eventoMostrarNavBar = ()=>
            datosVerOcultar[0].forEach(opcionVer =>
             {
                let datosVer = document.querySelector(opcionVer);
+
                datosVer.style.display ='block';
+
+              
+
+
 
             })
            

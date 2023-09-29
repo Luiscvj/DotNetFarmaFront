@@ -1,12 +1,11 @@
 import { opcEmpleado } from "../Services/empleado-service.js";
-
 export class EmpleadoController
  {
     constructor()
     {
         this.URL_API__ARL = 'http://localhost:5000/api/Arl';
-        this.URL_API__CIUDAD = 'http://localhost:5000/api/Ciudad/all';
-        this.URL_API_EPS = 'http://localhost:5000/api/Eps/all';
+        this.URL_API__CIUDAD = 'http://localhost:5000/api/Ciudad/All';
+        this.URL_API_EPS = 'http://localhost:5000/api/Eps/Getall';
         this.URL_API_CARGO = 'http://localhost:5000/api/Cargo';
         this.Header =
         {
@@ -107,7 +106,7 @@ CartaEmpleadoHTML = (empleado)=>
         let responseEps = await  (await fetch(`${this.URL_API_EPS}`,config)).json();
         let responseCargo = await  (await fetch(`${this.URL_API_CARGO}`,config)).json();
         
-        console.log(responseEps);
+        console.log(responseCargo);
         responseArl.forEach(arl=>
             {   
                 let optionArl = document.createElement('option');
