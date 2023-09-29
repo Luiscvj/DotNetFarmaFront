@@ -9,6 +9,11 @@ import '../Components/MedicamentoComponent/frmMedicamento.js'
 import "../Components/ArlComponent/Arl.js";
 import "../Components/PacienteComponent/Paciente.js";
 
+if (!localStorage.getItem('token')) 
+{
+  window.location.href = 'index.html';
+}
+
 /* import { PaisController } from '../../Controllers/pais-controller.js';
 let _paisController = new PaisController();
 

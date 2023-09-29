@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/style.css">
+	<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js" defer></script>
+	<script src="/js/main.js" defer></script>
+	<script src="/js/jquery.js" defer></script>
+	<script src="/js/bootstrap/bootstrap.min.js" defer></script>
+	
+	<script src="/js/app/app.js" defer type="module"></script>
+	<title>DotNetFarma</title>
+</head>
+<body>
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand text-center"><i class="p-3 fs-6">C#</i><span class="fw-bold p-2">DotNetFarma</span></a>
+		<ul class="side-menu">
+			<li><a href="#" class="active" id="logout"><i class='bx bx-log-out icon' ></i> Cerrar Sesion </a></li>
+			<li class="divider" data-text="main">Main</li>
+			<li>
+				<a href="#"><i class='bx bxs-capsule icon'></i> Productos <i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					<li><a href="#" class="entidades" data-verocultar='[["#navMenu","#navMedicamento","#divMedicamento"],["#Dashboard","#navPais","#divPais","#navDepartamento","#divDepartamento","#frmRegDepartamento","#divProveedor","#navProveedor","#divEmpleado","#navEmpleado","#frmRegEps","#navEps","#divEps","#navCiudad","#divCiudad","#frmRegCiudad"]]'>Medicamento</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#"><i class='bx bx-user icon'></i> Gestion <i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					
+					<li><a class="entidades" data-verocultar='[["#navMenu","#divProveedor","#navProveedor"],["#Dashboard","#navPais","#divPais","#navDepartamento","#divDepartamento","#frmRegDepartamento","#navCiudad","#frmRegCiudad","#frmRegEps","#divCiudad","#navEps","#divEps","#frmRegPais","#divEmpleado","#navEmpleado","#navMedicamento","#divMedicamento"]]' href="#">Proveedores</a></li>
+					<li><a class="entidades" data-verocultar='[["#navMenu","#divEmpleado","#navEmpleado"],["#Dashboard","#navPais","#divPais", "#navDepartamento","#divDepartamento","#frmRegDepartamento","#divProveedor","#navProveedor","#navMedicamento","#divMedicamento","#frmRegEps","#navEps","#divEps","#navCiudad","#divCiudad","#frmRegCiudad"]]' href="#">Empleados</a></li>
+					<li><a class="entidades" data-verocultar='[["#navMenu","#divEmpleado","#navEmpleado"],["#Dashboard","#navPais","#divPais", "#navDepartamento","#divDepartamento","#frmRegDepartamento","#divProveedor","#navProveedor","#navMedicamento","#divMedicamento","#frmRegEps","#navEps","#divEps","#navCiudad","#divCiudad","#frmRegCiudad"]]' href="#">Pacientes</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#"><i class='bx bx-buildings icon'></i> Zonas <i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					<li><a class="entidades" data-verocultar='[["#navMenu","#navPais"],["#Dashboard","#navProveedor","#divProveedor","#navDepartamento","#divDepartamento","#frmRegDepartamento","#frmRegProveedor","#frmRegCiudad","#frmRegEps","#navCiudad","#divCiudad","#navEps","#divEps","#divEmpleado","#navEmpleado","#navMedicamento","#divMedicamento"]]' href="#">Pais</a></li>
+					<li><a class="entidades" data-verocultar='[["#navMenu","#navDepartamento","#divDepartamento"],["#Dashboard","#navPais","#divProveedor","#divPais","#navProveedor","#frmRegProveedor","#navCiudad","#divCiudad","#navEps","#divEps","#frmRegCiudad","#frmRegEps","#frmRegPais","#divEmpleado","#navEmpleado","#navMedicamento","#divMedicamento"]]' href="#">Departamento</a></li>
+					<li><a class="entidades" data-verocultar='[["#navMenu","#navCiudad","#divCiudad"],["#Dashboard","#navPais","#divProveedor","#divPais","#navProveedor","#frmRegProveedor","#navDepartamento","#divDepartamento","#navEps","#divEps","#frmRegDepartamento","#frmRegEps","#frmRegPais","#divEmpleado","#navEmpleado","#navMedicamento","#divMedicamento"]]' href="#">Ciudad</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#"><i class='bx bx-briefcase-alt-2 icon'></i> Seguro <i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					<li><a class="entidades" data-verocultar='[["#navMenu","#divEmpleado","#navEmpleado"],["#Dashboard","#navPais","#divPais", "#navDepartamento","#divDepartamento","#frmRegDepartamento","#divProveedor","#navProveedor","#navMedicamento","#divMedicamento","#frmRegEps","#navEps","#divEps","#navCiudad","#divCiudad","#frmRegCiudad"]]' href="#">Arl</a></li>
+					<li><a class="entidades" data-verocultar='[["#navMenu","#navEps","#divEps"],["#Dashboard","#navPais","#divProveedor","#divPais","#navProveedor","#frmRegProveedor","#navDepartamento","#divDepartamento","#navCiudad","#divCiudad","#frmRegDepartamento","#frmRegCiudad","#frmRegPais","#divEmpleado","#navEmpleado","#navMedicamento","#divMedicamento"]]' href="#">Eps</a></li>
+				</ul>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+	<!-- NAVBAR -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu toggle-sidebar' ></i>
+			<for action="#">
+				
+			</for>
+			<span class="divider"></span>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<div id="Dashboard">
+
+				<h1 class="title">Dashboard</h1>
+				<ul class="breadcrumbs">
+					<li><a href="#">Home</a></li>
+					<li class="divider">/</li>
+					<li><a href="#" class="active">Dashboard</a></li>
+				</ul>
+
+			</div>
+
+			<!-- Paises -->
+			<div id="navMenu" style="display:none"  >
+				
+				<navbar-menu></navbar-menu>
+
+			</div>
+
+           <div id="divPais" style="display: none">
+
+			   <frm-reglist-pais></frm-reglist-pais>
+		   </div>
+
+		   <div id="divProveedor" style="display: none">
+				<frm-reglist-proveedor></frm-reglist-proveedor>
+		   </div>
+
+		   <div id="divDepartamento" style="display:none;" >
+				<frm-reglist-departamento></frm-reglist-departamento>
+		   </div>
+
+		   <div id="divEmpleado" style="display:none;" >
+			<frm-reglist-empleado></frm-reglist-empleado>
+	   		</div>
+
+			<div id="divMedicamento" class="p-2">
+
+				<frm-reglist-medicamento></frm-reglist-medicamento>	   
+		  	</div>
+
+		   <div id="divCiudad" style="display: none">
+			<frm-reglist-ciudad></frm-reglist-ciudad>
+			</div>
+
+			<div id="divEps" style="display:none;" >
+					<frm-reglist-eps></frm-reglist-eps>
+			</div>
+
+			<div id="" class="p-2">
+				<arl-component></arl-component>	   
+	  		</div>
+
+		  <div id="" class="p-2">
+			<paciente-component></paciente-component>	   
+	  		</div>
+		   
+		
+		
+		<!-- <div class="dropdown" >
+			  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+			  Dropdown button
+			  </button>
+			  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+				  <li><a class="dropdown-item" href="#">Comprar Existente</a></li>
+				  <li><a class="dropdown-item" href="#">Another action</a></li>
+				  <li><a class="dropdown-item" href="#">Something else here</a></li>
+			  </ul>
+		</div> -->
+		
+
+			
+
+			
+			<!-- <div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>Sales Report</h3>
+					</div>
+					 conteido 
+					<h1>Hola Mundo</h1>
+				</div>
+			
+			</div> -->
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- NAVBAR -->
+
+
+	<script src="/js/logout.js"></script>
+</body>
+</html>
