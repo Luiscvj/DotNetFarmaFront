@@ -1,4 +1,5 @@
 import { opcEmpleado } from "../Services/empleado-service.js";
+import { Fetch } from "./Fetch.js";
 export class EmpleadoController
  {
     constructor()
@@ -20,7 +21,7 @@ export class EmpleadoController
         this.epsSelect = document.querySelector("#epsSelect");
         this.cargoSelect = document.querySelector("#cargoSelect");
         this.ArraySelects = [];
-
+        this.fetch = new Fetch()
     }
    
 /* 
@@ -238,6 +239,76 @@ CartaEmpleadoHTML = (empleado)=>
             })
     }
 
+
+    getEmpleadosMasMedicamentosVendidos()
+    {
+        let url = "http://localhost:5000/api/Empleado/EmpleadoConMayorCantidadMedicamentos"
+        let options = 
+        {
+            method : "GET",
+            headers : new Headers
+            ({
+                "Content-Type":"application/json"
+            })
+        }
+        return this.fetch.fetch(url, options) 
+    }
+
+    getEmpleadoSinVentasAbril()
+    {
+        let url = "http://localhost:5000/api/Empleado/EmpleadosSinVentasAbril"
+        let options = 
+        {
+            method : "GET",
+            headers : new Headers
+            ({
+                "Content-Type":"application/json"
+            })
+        }
+        return this.fetch.fetch(url, options) 
+    }
+
+    getEmpleadoMenos5Ventas()
+    {
+        let url = "http://localhost:5000/api/Empleado/GetAllEmpleadoCoonMenos5Ventas2023"
+        let options = 
+        {
+            method : "GET",
+            headers : new Headers
+            ({
+                "Content-Type":"application/json"
+            })
+        }
+        return this.fetch.fetch(url, options) 
+    }
+
+    getEmpleado5Ventas()
+    {
+        let url = "http://localhost:5000/api/Empleado/5Ventas"
+        let options = 
+        {
+            method : "GET",
+            headers : new Headers
+            ({
+                "Content-Type":"application/json"
+            })
+        }
+        return this.fetch.fetch(url, options) 
+    }
+
+    getEmpleadoSinVentas()
+    {
+        let url = "http://localhost:5000/api/Empleado/noVentas"
+        let options = 
+        {
+            method : "GET",
+            headers : new Headers
+            ({
+                "Content-Type":"application/json"
+            })
+        }
+        return this.fetch.fetch(url, options) 
+    }
 
 
     
